@@ -1,0 +1,68 @@
+{% extends 'base/index.html.twig' %}
+
+{% block page_title %}
+    <section class="content-header">
+        <h1>
+            Usuario
+            <small>Listar</small>
+        </h1>
+    </section>
+
+
+{% endblock %}
+
+
+{% block first_row %}
+    <div class="row">
+
+        <div class="col-md-2">
+            <a href="{{ path('cadastro_usuario_new') }}" class="btn btn-{{ button_color }}" title="Novo">
+                <i class="ti ti-plus"></i>
+            </a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block table %}
+    <table class="table table-hover table-striped table-datatable">
+        <thead>
+            <tr>
+                <th>Ações</th>
+                <th>Nome Completo</th>
+                <th>Nome</th>
+                <th>Número Identificação</th>
+                <th>Centro de Movimentacao</th>
+                <th>Unidade</th>
+                <th>Acesso</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+                <tr>
+                    <td>
+                        <a href="{{ path('cadastro_usuario_show', { 'id': usuario.id }) }}" class="btn btn-{{ button_color }}" title="Mostrar">
+                            <i class="ti ti-search"></i>
+                        </a>
+                        <a href="{{ path('cadastro_usuario_edit', { 'id': usuario.id }) }}" class="btn btn-{{ button_color }}" title="Editar">
+                            <i class="ti ti-edit"></i>
+                        </a>
+                    </td>
+                    <td><a href="{{ path('cadastro_usuario_show', { 'id': usuario.id }) }}">{{ usuario.nomecompleto }}</a></td>
+                    <td>{{ usuario.nome }}</td>
+                    <td>{{ usuario.numeroIdentificacao }}</td>
+                    <td>{{ usuario.departamento.nome }}</td>
+                    <td>{{ usuario.departamento.unidade.nome }}</td>
+                    <td>
+                        {% if usuario.userId is not null%}
+                            {{ usuario.userId.email }}
+                        {% endif %}
+                    </td>
+                    <td>{% if usuario.status %}Ativo{% else %}Inativo{% endif %}</td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

@@ -1,0 +1,49 @@
+{% extends 'base/index.html.twig' %}
+
+
+{% block page_title %}
+
+    <section class="content-header">
+        <h1>
+            Unidade
+            <small>Listar</small>
+        </h1>
+    </section>
+
+{% endblock %}
+
+
+{% block first_row %}
+    <div class="col-md-3">
+        <a href="{{ path('cadastro_unidade_new') }}" class="btn btn-{{ button_color }} ">
+            <i class="ti ti-plus"></i>
+        </a>
+    </div>
+{% endblock %}
+
+{% block table %}
+
+    <table class="table table-bordered table-condensed table-hover table-striped table-datatable">
+        <thead>
+            <tr>
+                <th>Ações</th>
+                <th>Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for unidade in unidades %}
+                <tr>
+                    <td>
+                        <a href="{{ path('cadastro_unidade_show', { 'id': unidade.id }) }}" class="btn btn-{{ button_color }} ">
+                            <i class="ti ti-search"></i>
+                        </a>
+                        <a href="{{ path('cadastro_unidade_edit', { 'id': unidade.id }) }}" class="btn btn-{{ button_color }} ">
+                            <i class="ti ti-edit"></i>
+                        </a>
+                    </td>
+                    <td>{{ unidade.nome }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

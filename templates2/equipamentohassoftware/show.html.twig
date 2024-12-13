@@ -1,0 +1,70 @@
+<div class="panel panel-primary">
+
+    <div class="panel-heading">
+        <strong>Equipamentos atrelados</strong>
+    </div>
+
+    <div class="panel-body">
+
+        <div class="table-responsive">
+
+            <table class="table table-bordered table-condensed table-datatable">
+                <thead>
+                <tr>
+                    <th>Ação</th>
+                    <th>Nome</th>
+                    <th>Nº Série</th>
+                    <th>Centro de Movimentação</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for equipamento in equipamentoHasSoftware %}
+
+                    <tr>
+                        <td>
+                            <a href="{{ path('cadastro_equipamento_show', {'id': equipamento.equipamento.id }) }}"
+                            class="btn btn-primary btn-xs" data-toggle="tooltip" title="Ir para Movimentação">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            </a>
+                        </td>
+
+                        <td>{{ equipamento.equipamento.nome }}</td>
+                        <td>{{ equipamento.equipamento.numeroserie }} </td>
+                        <td>{{ equipamento.equipamento.centroMovimentacao.nome }} </td>
+                        <td>
+                            {% if equipamento.equipamento.status == 1 %}
+                                Ativo
+                            {% else %}
+                                Inativo
+                            {% endif %}
+                        </td>
+
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="panel-footer">
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <button type="button" class="btn btn-primary btn-xs pull-right" data-dismiss="modal" aria-label="Close">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    Fechar
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

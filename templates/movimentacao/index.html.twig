@@ -1,0 +1,73 @@
+{% extends 'base/index.html.twig' %}
+
+
+{% block page_title %}
+
+    <section class="content-header">
+        <h1>
+            Movimentacao
+            <small>Listar</small>
+        </h1>
+    </section>
+
+{% endblock %}
+
+
+{% block first_row %}
+    <div class="row">
+        <div class="col-md-2">
+            <a href="{{ path('movimentacao_new') }}" class="btn btn-{{ button_color }}">
+                <span class="ti ti-plus"></span>
+            </a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block table %}
+    <div class="table-responsive">
+        <table class="table table-bordered table-condensed table-hover table-striped table-datatable">
+            <thead>
+                <tr>
+                    <th>Ações</th>
+                    <th>Movimentação</th>
+                    <th>Data Criação</th>
+                    <th>De</th>
+                    <th>Para</th>
+                    <th>Tipo</th>
+                    <th>Motivo</th>
+                    <th>Criador</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for movimentacao in movimentacaos %}
+                    <tr>
+                        <td>
+                            <a href="{{ path('movimentacao_show', { 'id': movimentacao.id }) }}" class="btn btn-{{ button_color }}">
+                                <span class="ti ti-search"></span>
+                            </a>
+                            {% if movimentacao.status %}
+                                <a href="#" class="btn btn-{{ button_color }} disabled">
+                                    <span class="ti ti-edit"></span>
+                                </a>
+                            {% else %}
+                                <a href="{{ path('movimentacao_edit', { 'id': movimentacao.id }) }}" class="btn btn-{{ button_color }}">
+                                    <span class="ti ti-edit"></span>
+                                </a>
+                            {% endif %}
+                        </td>
+                        <td>{{ movimentacao.id }} | {{ movimentacao.datahora|date('d-m-Y') }}</a></td>
+                        <td>{{ movimentacao.datahora|date('d-m-Y') }}</td>
+                        <td>{{ movimentacao.usuarioOrigem.departamento }}</td>
+                        <td>{{ movimentacao.usuarioDestino.departamento }}</td>
+                        <td>{{ movimentacao.tipomovimentacao.nome }}</td>
+                        <td>{{ movimentacao.motivomovimentacao.descricao }}</td> 
+                        <td>{{ movimentacao.usuarioCriador }}</td>
+                        <td>{% if movimentacao.status %}Finalizado{% else %}Aberto{% endif %}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

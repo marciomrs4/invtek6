@@ -1,0 +1,50 @@
+{% extends 'base/main.html.twig' %}
+
+
+{% block page_title %}
+
+    <section class="content-header">
+        <h1>
+            Tipo de Acesso IP
+            <small>Editar</small>
+        </h1>
+    </section>
+
+{% endblock %}
+
+
+{% block first_row %}
+
+    <div class="row">
+
+        <div class="col-md-2 col-sm-3 col-xs-3">
+
+            <a href="{{ path('cadastro_tipoacessoip_index') }}" class="btn btn-{{ button_color }}">
+                <span class="ti ti-arrow-left"></span>
+            </a>
+
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-3">
+            {{ form_start(delete_form) }}
+            <button type="submit" class="btn btn-danger" id="remover-form">
+                <span class="ti ti-trash"></span>
+            </button>
+            {{ form_end(delete_form) }}
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block card_body %}
+
+    {{ form_start(edit_form) }}
+    {{ form_widget(edit_form) }}
+
+    <span class="form-label"></span>
+    <button type="submit" class="btn btn-{{ button_color }}">
+        <span class="ti ti-device-floppy"></span>
+    </button>
+
+    {{ form_end(edit_form) }}
+
+{% endblock %}

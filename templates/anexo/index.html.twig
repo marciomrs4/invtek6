@@ -1,0 +1,81 @@
+{% extends 'base/index.html.twig' %}
+
+
+{% block page_title %}
+
+
+    <section class="content-header">
+        <h1>
+            Anexo
+            <small>Listar</small>
+        </h1>
+    </section>
+
+
+{% endblock %}
+
+
+{% block first_row %}
+    <div class="row">
+
+        <div class="col-md-2">
+            <a href="{{ path('cadastro_anexoequipamento_new', { 'equipamento' : equipamento.id }) }}" class="btn btn-{{ button_color }}">
+                <span class="ti ti-plus"></span>
+            </a>
+        </div>
+
+        <div class="col-md-2">
+            <a href="{{ path('cadastro_equipamento_show', { 'id' : equipamento.id }) }}" class="btn btn-{{ button_color }}" title="Mostrar Equipamento">
+                <span class="ti ti-arrow-up"></span>
+            </a>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block table %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Equipamento: {{ equipamento.nome }} | {{ equipamento.centroMovimentacao }}</h4>  
+        </div>
+    </div>
+
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-condensed table-hover table-striped table-datatable">
+            <thead>
+                <tr>
+                    <th>Ações</th>
+                    <th>Nome do Arquivo</th>
+                    <th>Nome</th>
+                    <th>Data de Criação</th>
+                    <th>Data de Alteração</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for anexo in anexos %}
+                    <tr>
+                        <td>
+                            <a href="{{ path('cadastro_anexoequipamento_show', { 'id': anexo.id }) }}" class="btn btn-{{ button_color }}">
+                                <span class="ti ti-search"></span>
+                            </a>
+                            <a href="{{ path('cadastro_anexoequipamento_edit', { 'id': anexo.id }) }}" class="btn btn-{{ button_color }}">
+                                <span class="ti ti-edit"></span>
+                            </a>
+                            <a href="{{ vich_uploader_asset(anexo,'imageFile') }}" target="_blank" class="btn btn-{{ button_color }}">
+                                <span class="ti ti-download"></span>
+                            </a>
+                        </td>
+                        <td><a href="{{ path('cadastro_anexoequipamento_show', { 'id': anexo.id }) }}">{{ anexo.imageName }}</a></td>
+                        <td>{{ anexo.nome }}</td>
+                        <td>{% if anexo.datacriacao %}{{ anexo.datacriacao|date('d-m-Y H:i:s') }}{% endif %}</td>
+                        <td>{% if anexo.dataalteracao %}{{ anexo.dataalteracao|date('d-m-Y H:i:s') }}{% endif %}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

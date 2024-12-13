@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="pt_BR">
+
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <meta name="robots" content="noindex,nofollow">
+        <link id="favicon" rel="icon" type="image/x-icon" href="/favicon.ico">
+        <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/touch-icon-180x180.png">
+
+        <meta name="apple-mobile-web-app-title" content="InvTek">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="application-name" content="InvTek">
+
+{% block css %}
+        <link href="{{ asset('css/tabler.min.css') }}" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ asset('css/datatables.min.css') }}">
+    
+        <!-- add ico by mim-->
+        <link rel="stylesheet" href="{{ asset('css/tabler-icons.css') }}">
+{% endblock %}
+
+        <title>INVTEK</title>
+
+    </head>
+
+    <body data-title="INVTEK&#x20;&#x2013;&#x20;IV&#x20;de&#x20;" class="antialiased " data-bs-theme="{{ invtek_theme|default('dark') }}">
+
+        <div id="toast-container" class="toast-container position-fixed top-0 start-50 translate-middle-x p-3"
+             style="z-index: 11">
+        </div>
+
+        <div class="page">
+
+            <aside id="" class="navbar navbar-vertical navbar-expand-lg" data-bs-theme="dark">
+
+                <div class="container-fluid">
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="d-flex justify-content-start flex-fill d-lg-none">
+                        <h2 class="page-title d-lg-none ps-2 text-white">
+                            {% block page_title_reduzido %} 
+                                InvTek 
+                            {% endblock %}
+                        </h2>
+                        <h1 class="navbar-brand  d-none d-lg-inline-flex">
+                            <a href="/pt_BR/dashboard/" title="{{ version }}">
+                                <img class="navbar-brand-image" alt="{{ version }}" 
+                                     width="110" height="32"
+                                     src="">
+                            </a>
+                        </h1>
+
+                    </div>
+
+                    <h1 class="navbar-brand  d-none d-lg-inline-flex">
+                        <a href="" title="{{ company }}">
+                            <img class="navbar-brand-image" alt="{{ company }}" width="110" height="32"
+                                 src="{{ asset('img/inftek.png') }}">
+                        </a>
+                    </h1>
+
+                    <div class="navbar-nav flex-row d-lg-none">
+
+                        <!-- Menu do usuário -->
+                        {{ include('base/menu_usuario.html.twig') }}
+                        <!-- Fim Menu Usuario-->
+
+                    </div>
+
+                    <!-- Menu Lateral principal -->
+                    {{ include('base/menu.html.twig') }}
+                    <!-- Fim Menu principal -->
+
+                </div>
+            </aside>
+
+            <header id="" class="navbar navbar-expand-md d-none d-lg-flex d-print-none">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="navbar-nav flex-row order-md-last">
+
+                        <!-- inicio menu usuario  -->
+                        <div class="nav-item dropdown">
+                            
+                            <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
+                               aria-label="Abrir o menu pessoal">
+                                <span class="avatar avatar-sm">
+                                    <span class="avatar" 
+                                          style="background-color: #ae3ec9; 
+                                          color: #ffffff"
+                                          title="admin base">    
+                                    </span>
+                                </span>
+
+                                <div class="d-none d-xl-block ps-2">
+                                    <div>{% if app.user %}
+                                        {{ app.user.username }}
+                                        <small></small>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </a>
+                                    
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <a href="#" class="dropdown-item">Mudar Senha</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="{{ path('app_logout') }}" class="dropdown-item">Sair</a>
+                            </div>
+                            
+                        </div>
+                        <!-- fim menu usuario  -->
+
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="navbar-menu">
+
+                        <h2 class="page-title me-2">
+                            {% block page_title %} 
+                                Default 
+                            {% endblock %}
+                        </h2>
+                        
+                    </div>
+
+                </div>
+
+            </header>
+
+            <div id="" class="page-wrapper">
+
+                <div class="container-fluid">
+                    <div id="" class="page-header d-print-none">
+
+                        {% block first_row %}                  
+                            <div class="row align-items-center">
+
+                                <div class="mb-3">
+
+                                    <label class="form-label">Separated inputs</label>
+                                    <div class="row g-2">
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" placeholder="Search for…" />
+                                        </div>
+                                        <div class="col-auto">
+                                            <a href="#" class="btn btn-icon" aria-label="Button">
+
+                                            </a>
+
+                                        </div>
+
+                                        <div class="col-3">
+                                             COL-3
+                                        </div>
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        {% endblock %}                    
+
+                    </div>
+
+                </div>
+
+                <div class="page-body">
+                    <div class="container-fluid">
+                        <div class="row row-cards">
+
+                            <section id="" class="content ">
+
+                                {% block second_row %}
+
+                                {% endblock %}
+
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+{% block javascripts %}
+        <!-- Tabler Core -->
+        <script src="{{ asset('js/tabler.min.js') }}"></script>
+{% endblock %}
+
+    </body>
+
+</html>

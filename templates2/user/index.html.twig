@@ -1,0 +1,61 @@
+{% extends 'template/template.html.twig' %}
+
+    {% block contentheader %}
+
+
+    <section class="content-header">
+        <h1>
+            Acessos (User)
+            <small>Listar</small>
+        </h1>
+    </section>
+
+
+    {% endblock %}
+
+
+    {% block panelheading %}
+    <a href="{{ path('app_user_new') }}" class="btn btn-primary btn-sm">
+            <span class="glyphicon glyphicon-plus"></span>
+            Novo
+        </a>
+    {% endblock %}
+
+
+{% block panelbody %}
+
+<div class="table-responsive">
+        <table class="table table-bordered table-condensed table-hover table-striped">
+            <thead>
+            <tr>
+                <th>Ações</th>
+                    <th>Nome</th>
+                    <th>Permissão</th>
+            </tr>
+            </thead>
+            <tbody>
+        {% for user in users %}
+            <tr>
+                <td>
+                    <a href="{{ path('app_user_show', {'id': user.id}) }}" class="btn btn-primary btn-sm">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </a>
+                    <a href="{{ path('app_user_edit', {'id': user.id}) }}" class="btn btn-primary btn-sm">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </a>
+                </td>
+                
+                <td>{{ user.username }}</td>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

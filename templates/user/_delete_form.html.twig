@@ -1,0 +1,6 @@
+<form name="form" method="post" action="{{ path('app_user_delete', {'id': user.id}) }}">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+    <button type="submit" class="btn btn-danger" id="remover-form">
+        <span class="ti ti-trash"></span>
+    </button>
+</form>

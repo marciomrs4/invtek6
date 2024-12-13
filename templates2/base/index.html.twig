@@ -1,0 +1,169 @@
+{% extends('base/base.html.twig') %}
+
+{% block page_title %}{{ page_title | default('Lista') }}{% endblock %}
+
+{% block second_row %}
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="card  mb-3">
+                <div class="card-status-start bg-purple"></div>
+
+
+                <!-- MEIO PAGINA-->
+                <div class="card-body">
+
+                    <div class="card-title">
+
+
+                        {% for message in app.session.flashBag.get('notice') %}
+                            <div class="alert alert-success alert-dismissible" role="alert">
+                                <div class="d-flex">
+                                    <div>
+                                        <i class="ti ti-alert-icon"></i>
+                                    </div>
+                                    <div>
+                                        {{ message }}.
+                                    </div>
+                                </div>
+                                <a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+
+                    {% block table %}
+                        <table class="table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th class="text-nowrap">Heading 1</th>
+                                    <th class="text-nowrap">Heading 2</th>
+                                    <th class="text-nowrap">Heading 3</th>
+                                    <th class="text-nowrap">Heading 4</th>
+                                    <th class="text-nowrap">Heading 5</th>
+                                    <th class="text-nowrap">Heading 6</th>
+                                    <th class="text-nowrap">Heading 7</th>
+                                    <th class="text-nowrap">Heading 8</th>
+                                    <th class="text-nowrap">Heading 9</th>
+                                    <th class="text-nowrap">Heading 10</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>1</th>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    {% endblock %}
+
+
+                    <div class="modal" id="exampleModal" tabindex="-1">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                <div class="modal-status bg-danger"></div>
+                                <div class="modal-body text-center py-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                         class="icon mb-2 text-danger icon-lg" width="24"
+                                         height="24" viewBox="0 0 24 24" stroke-width="2"
+                                         stroke="currentColor" fill="none" stroke-linecap="round"
+                                         stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 9v2m0 4v.01" />
+                                    <path
+                                        d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" />
+                                    </svg>
+                                    <h3>Are you sure?</h3>
+                                    <div class="text-secondary">Do you really want to remove 84
+                                        files? What you've done cannot be undone.</div>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="w-100">
+                                        <div class="row">
+                                            <div class="col"><a href="#" class="btn w-100"
+                                                                data-bs-dismiss="modal">
+                                                    Cancel
+                                                </a></div>
+                                            <div class="col"><a href="#"
+                                                                class="btn btn-danger w-100"
+                                                                data-bs-dismiss="modal">
+                                                    Delete 84 items
+                                                </a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="modal" id="exampleModal1" tabindex="-1">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Modal title</h5>
+                                    <button type="button" class="btn-close"
+                                            data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Adipisci animi beatae delectus deleniti dolorem eveniet
+                                    facere fuga iste nemo nesciunt nihil odio perspiciatis, quia
+                                    quis reprehenderit sit tempora totam unde.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn me-auto"
+                                            data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary"
+                                            data-bs-dismiss="modal">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ asset('js/datatables.min.js') }}"></script>
+    <script src="{{ asset('js/mrs-dataTable.js') }}"></script>
+
+{% endblock %}

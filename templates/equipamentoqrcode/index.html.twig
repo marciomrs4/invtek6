@@ -1,0 +1,69 @@
+{% extends 'base/main.html.twig' %}
+
+{% block page_title %}
+
+    <section class="content-header">
+        <h1>
+            Equipamento
+            <small>QrCode</small>
+        </h1>
+    </section>
+
+{% endblock %}
+
+{% block first_row %}
+
+
+
+    <div class="card">
+        <div class="card-body">
+            <div class="card-status-top bg-purple"></div>
+            <strong>Tipos de Equipamento</strong>
+
+            <div class="row">
+                <div class="col-md-4">
+                    {{ form_start(form) }}
+
+                    {{ form_widget(form.tipoequipamento) }}
+                </div>
+
+                <div class="col-md-4">
+                    <button class="btn btn-{{ button_color }}">
+                        <span class="ti ti-refresh"></span>
+                    </button>    
+                    {{ form_end(form) }}
+                </div>
+            </div>
+                
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block card_body %}
+    <div class="row">
+
+        {% for equipamento in equipamentos %}
+
+            <div class="col-md-2">
+                <div class="card">
+
+                    <div class="card-header with-border">
+                        <h3 class="card-title">
+                            Patrimônio: {{ equipamento.patrimonio }}
+                        </h3>
+                    </div>
+
+                    <div class="card-body" style="display: block;">
+                        <img src="{{ qr_code_data_uri(absolute_url(path('equipamento_qrcode_show',{ 'equipamento' : equipamento.id }))) }}">
+                    </div>
+
+                </div>
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+{% endblock %}

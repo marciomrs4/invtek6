@@ -1,0 +1,82 @@
+{% extends 'template/template.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap.css') }}">
+{% endblock %}
+
+
+    {% block contentheader %}
+
+
+        <section class="content-header">
+            <h1>
+                Usuario
+                <small>Listar</small>
+            </h1>
+        </section>
+
+
+    {% endblock %}
+
+
+    {% block panelheading %}
+        <a href="{{ path('cadastro_usuario_new') }}" class="btn btn-primary btn-sm">
+            <span class="glyphicon glyphicon-plus"></span>
+            Novo
+        </a>
+    {% endblock %}
+
+    {% block panelbody %}
+        <div class="table-responsive">
+            <table class="table table-bordered table-condensed table-hover table-striped table-datatable">
+                <thead>
+                <tr>
+                    <th>Ações</th>
+                    <th>Nome Completo</th>
+                    <th>Nome</th>
+                    <th>Número Identificação</th>
+                    <th>Centro de Movimentacao</th>
+                    <th>Unidade</th>
+                    <th>Acesso</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for usuario in usuarios %}
+                    <tr>
+                        <td>
+                            <a href="{{ path('cadastro_usuario_show', { 'id': usuario.id }) }}" class="btn btn-primary btn-xs">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </a>
+                            <a href="{{ path('cadastro_usuario_edit', { 'id': usuario.id }) }}" class="btn btn-primary btn-xs">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </a>
+                        </td>
+                        <td><a href="{{ path('cadastro_usuario_show', { 'id': usuario.id }) }}">{{ usuario.nomecompleto }}</a></td>
+                        <td>{{ usuario.nome }}</td>
+                        <td>{{ usuario.numeroIdentificacao }}</td>
+                        <td>{{ usuario.departamento.nome }}</td>
+                        <td>{{ usuario.departamento.unidade.nome }}</td>
+                        <td>
+                            {% if usuario.userId is not null%}
+                                {{ usuario.userId.email }}
+                            {% endif %}
+                        </td>
+                        <td>{% if usuario.status %}Ativo{% else %}Inativo{% endif %}</td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+    {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('js/dataTables.bootstrap.js') }}"></script>
+    <script src="{{ asset('js/mrs-dataTable.js') }}"></script>
+{% endblock %}

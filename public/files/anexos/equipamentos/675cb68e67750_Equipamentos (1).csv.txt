@@ -1,0 +1,3 @@
+Tipo de Equipamento;Fornecedor;Marca;Patrimônio;Data da Compra;Número de Série;Status;Centro de Movimentação;Descrição;Observação
+Computador;DELL;DELL;BLUEAR048;14-09-2021;4QG9ZH3;Ativo;Vendas;Computador do Financeiro;
+Computador;DELL;DELL;BLUEAR049;26-03-2022;2878KN3;Ativo;Estoque;Computador do Estoque;

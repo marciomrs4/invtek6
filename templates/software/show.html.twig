@@ -1,0 +1,220 @@
+{% extends 'base/main.html.twig' %}
+
+
+{% block page_title %}
+
+    <section class="content-header">
+        <h1>
+            Software
+            <small>Mostrar</small>
+        </h1>
+    </section>
+
+{% endblock %}
+
+
+{% block first_row %}
+
+    <div class="row">
+
+        <div class="col-md-2 col-sm-3 col-xs-3">
+
+            <a href="{{ path('cadastro_software_index') }}" class="btn btn-{{ button_color }}">
+                <span class="ti ti-arrow-left"></span>
+            </a>
+
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-3">
+
+            <a href="{{ path('cadastro_software_edit', { 'id': software.id }) }}" class="btn btn-{{ button_color }}">
+                <span class="ti ti-edit"></span>
+            </a>
+
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-3">
+
+            <div class="dropdown">
+                <a href="#" class="btn btn-purple dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="ti ti-menu-2"></i>
+                </a>
+                <div class="dropdown-menu bg-purple" style="">
+
+                    <a class="dropdown-item" href="{{ path('cadastro_softwaretag_new', { 'software': software.id }) }}" >
+                        <i class="ti ti-tag"></i> 
+                        - Nova Tag
+                    </a>
+                    <a class="dropdown-item" href="{{ path('cadastro_licencasoftware_new', { 'software': software.id }) }}" >
+                        <i class="ti ti-license"></i> 
+                        - Licença
+                    </a>                        
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+
+
+{% block card_body %}
+    
+        <div class="row">
+
+        {% for message in app.session.flashBag.get('notice') %}
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <div class="d-flex">
+                    <div>
+                        <i class="ti ti-alert-icon"></i>
+                    </div>
+                    <div>
+                        {{ message }}.
+                    </div>
+                </div>
+                <a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>
+            </div>
+        {% endfor %}
+
+    </div>
+
+
+    <div class="table table-responsive">
+        <table class="table table-bordered table-condensed table-hover table-striped table-datatable">
+            <tbody>
+                <tr>
+                    <th>Descrição</th>
+                    <td>{{ software.descricao }}</td>
+                </tr>
+                <tr>
+                    <th>Versão</th>
+                    <td>{{ software.versao }}</td>
+                </tr>
+                <tr>
+                    <th>Serial</th>
+                    <td>{{ software.serial }}</td>
+                </tr>
+                <tr>
+                    <th>Tipo de Software</th>
+                    <td>{{ software.tiposoftware.descricao }}</td>
+                </tr>
+                <tr>
+                    <th>Fornecedor de Software</th>
+                        {% if software.fornecedor %}
+                        <td>{{ software.fornecedor.nome }}</td>
+                    {% endif  %}
+                </tr>
+                <tr>
+                    <th>Número de licença</th>
+                    <td>{{ software.numerolicensa }}</td>
+                </tr>
+                <tr>
+                    <th>Número de Reservas</th>
+                    <td>{{ software.numeroReserva }}</td>
+                </tr>
+                <tr>
+                    <th>Número de licenças em uso</th>
+                    <td>{{ quantidadeEquipamento }}</td>
+                </tr>
+                <tr>
+                    <th>Número de licenças disponiveis</th>
+                    <td>{{ software.numerolicensa - (software.numeroReserva + quantidadeEquipamento) }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <stong>Tags Adicionadas</stong>
+        </div>
+        <div class="card-body">
+            <div class="table table-responsive">
+                <table class="table table-bordered table-condensed table-hover table-striped table-datatable">
+                    <tbody>
+
+                        <tr>
+                            <th>Editar</th>
+                            <th>Descricao</th>
+                            <th>Nome</th>
+                        </tr>
+
+                        {% for tag in tags %}
+                            <tr>
+                                <th>
+                                    <a href="{{ path('cadastro_softwaretag_edit', {'id': tag.id}) }}"
+                                       class="btn btn-{{ button_color }}">
+                                        <span class="ti ti-edit"></span>
+                                    </a>
+                                </th>
+                                <th>
+                                    {{ tag.descricao }}
+                                </th>
+                                <td>
+                                    {{ tag.nome }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="modal fade" id="bs-maisinformacoes" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="maisinformacoes">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 col-sm-4 col-xs-4">
+            <a href="{{ path('cadastro_equipamentoaddsoftware_show', { 'software': software.id }) }}"
+               class="maisinformacao btn btn-{{ button_color }}" data-bs-toggle="modal" data-bs-target="#bs-maisinformacoes"
+               title="Ver equipamentos atrelados">
+                <span class="ti ti-devices-share"></span>
+            </a>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+
+    <script>
+
+        $(document).ready(function () {
+
+
+            let maisinformacao = $(".maisinformacao");
+
+            let urlMaisInformacao = $(maisinformacao).attr('href');
+
+            $(".maisinformacao").click(function (e) {
+
+                e.preventDefault();
+
+                $.get(urlMaisInformacao, function (data) {
+                    $(".maisinformacoes").html(data);
+                });
+
+            });
+
+
+        });
+
+    </script>
+
+{% endblock %}
+
+

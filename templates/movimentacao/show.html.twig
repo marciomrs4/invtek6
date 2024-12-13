@@ -1,0 +1,134 @@
+{% extends 'base/main.html.twig' %}
+
+
+{% block page_title %}
+
+    <section class="content-header">
+        <h1>
+            Movimentacao
+            <small>Mostrar</small>
+        </h1>
+    </section>
+
+{% endblock %}
+
+
+{% block first_row %}
+
+    <div class="row">
+
+        <div class="col-md-2 col-sm-3 col-xs-3">
+            <a href="{{ path('movimentacao_index') }}" class="btn btn-{{ button_color }}">
+                <span class="ti ti-arrow-left"></span>
+            </a>
+        </div>
+
+        {% if movimentacao.status %}
+
+        {% else %}
+            <div class="col-md-2 col-sm-3 col-xs-3">
+
+                <a href="{{ path('movimentacao_edit', { 'id': movimentacao.id }) }}" class="btn btn-{{ button_color }}">
+                    <span class="ti ti-edit"></span>
+                </a>
+
+            </div>
+        {% endif %}
+
+        <div class="col-md-2 col-sm-3 col-xs-3">
+
+            {% if movimentacao.status %}
+
+                <a href="{{ path('report_doc_movimentacao', {'movimentacao': movimentacao.id }) }}" target="_blank"
+                   class="btn btn-{{ button_color }}" title="Gerar Documento">
+                    <span class="ti ti-download"></span>
+                </a>
+
+            {% else %}
+                <a href="{{ path('cadastro_itensmovimentacao_new', { 'movimentacao': movimentacao.id }) }}"
+                   class="btn btn-{{ button_color }}" title="Adicionar Equipamento">
+                    <span class="ti ti-plus"></span>
+                </a>
+            {% endif %}
+
+        </div>
+
+        <div class="col-md-2 col-sm-3 col-xs-3">
+            {% if itensMovimentacao %}
+
+                {% if movimentacao.status  %}
+
+                {% else %}
+                    <a href="{{ path('movimentacao_createmove', { 'id': movimentacao.id }) }}" 
+                       class="btn btn-{{ button_color }}" title="Movimentar">
+                        <span class="ti ti-exchange"></span>
+                    </a>
+                {% endif %}
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}
+
+
+
+{% block card_body %}
+
+        <div class="row">
+
+        {% for message in app.session.flashBag.get('notice') %}
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <div class="d-flex">
+                    <div>
+                        <i class="ti ti-alert-icon"></i>
+                    </div>
+                    <div>
+                        {{ message }}.
+                    </div>
+                </div>
+                <a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>
+            </div>
+        {% endfor %}
+
+    </div>
+
+    <div class="table table-responsive">
+        <table class="table table-bordered table-condensed table-hover table-striped table-datatable">
+            <tbody>
+                <tr>
+                    <th>Movimentação</th>
+                    <td>{{ movimentacao.id }} | {{ movimentacao.datahora|date('d-m-Y H:i:s') }}</td>
+                </tr>
+                <tr>
+                    <th>Criado por</th>
+                    <td>{{ movimentacao.usuarioCriador.username }}</td>
+                </tr>
+                <tr>
+                    <th>Criado Em</th>
+                    <td>{% if movimentacao.datahora %}{{ movimentacao.datahora|date('d-m-Y H:i:s') }}{% endif %}</td>
+                </tr>
+                <tr>
+                    <th>De</th>
+                    <td>{{ movimentacao.usuarioOrigem.departamento.nome }}</td>
+                </tr>
+                <tr>
+                    <th>Para</th>
+                    <td>{{ movimentacao.usuarioDestino.departamento.nome }}</td>
+                </tr>
+                <tr>
+                    <th>Tipo</th>
+                    <td>{{ movimentacao.tipomovimentacao.nome }}</td>
+                </tr>
+                <tr>
+                    <th>Motivo</th>
+                    <td>
+                        {{ movimentacao.motivomovimentacao.descricao }}|{{ movimentacao.motivomovimentacao.tipomovimentacao.nome }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    {{ render(controller('App\\Controller\\ItensMovimentacaoController::indexAction', { 'movimentacao' : movimentacao.id })) }}
+
+{% endblock %}

@@ -1,0 +1,301 @@
+{% extends 'template/template.html.twig' %}
+
+{% block title %}
+    Movimentação: {{ movimentacao.id }}|{{ movimentacao.datahora|date('d-m-Y') }}
+{% endblock %}
+
+    {% block contentheader %}
+
+        <section class="content-header">
+            <h1>
+                Movimentação
+                <small>Exportação</small>
+                <button class="btn btn-default" id="print">
+                    <span class="fa fa-print"></span>
+                    Imprimir
+                </button>
+            </h1>
+        </section>
+
+    {% endblock %}
+
+    {% block content %}
+
+        <div class="row">
+
+
+            <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+
+                <div class="panel panel-default">
+
+                    <div class="panel-body">
+
+                        <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <img src="{{ asset('logoRelatorio.jpeg') }}" alt="" width="200">
+                            </div>
+
+                            <div class="col-md-9 col-sm-9 col-xs-9">
+                            <span class="info-box-number">
+                                Data: {{ movimentacao.datahora|date('d-m-Y') }}
+                            </span>
+
+                            <span class="info-box-number">
+                                Registro de Movimentação<br>
+                                {{ movimentacao.tipomovimentacao }} de equipamento na TI.
+                            </span>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                <div class="panel panel-default">
+
+                    <div class="panel-heading">
+                        <strong>Descrição do(s) Equipamento(s)</strong>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-condensed table-hover table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Equipamento</th>
+                                    <th>Patrimônio</th>
+                                    <th>Número</th>
+                                    <th>Chamado</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in itensMovimentacao %}
+                                    <tr>
+                                        <td>{{ item.equipamento.nome }}</td>
+                                        <td>{{ item.equipamento.patrimonio }}</td>
+                                        <td>{{ item.equipamento.numeroserie }}</td>
+                                        <td>{{ item.numeroChamado }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+
+                <div class="panel panel-default">
+
+                    <div class="panel-heading">
+                        <strong>Destino</strong>
+                    </div>
+
+                    <div class="panel-body">
+
+                        <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">
+                                    <strong>Departamento</strong>
+                                </div>
+
+                                <div class="panel-body">
+                                    {{ movimentacao.usuarioDestino.departamento.nome }}
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">
+                                    <strong>NOME</strong>
+                                </div>
+
+                                <div class="panel-body">
+                                    {{ movimentacao.usuarioDestino.nome }}
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">
+                                    <strong>Número Identificação</strong>
+                                </div>
+
+                                <div class="panel-body">
+                                    {{ movimentacao.usuarioDestino.numeroIdentificacao }}
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                <div class="panel panel-default">
+
+                    <div class="panel-heading">
+                        <strong>Motivo da {{ movimentacao.tipomovimentacao }}</strong>
+                    </div>
+
+                    <div class="panel-body">
+
+                        <div class="table table-responsive">
+                            <table class="table table-bordered table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td>{{ movimentacao.motivomovimentacao }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+
+                <div class="panel panel-default">
+
+                    <div class="panel-body">
+
+                        <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
+
+                            <div class="panel panel-default">
+
+
+                                <div class="panel-heading">
+                                    <strong>Recebedor (Nome Legível)</strong>
+                                </div>
+
+                                <div class="panel-body">
+                                    &nbsp;
+                                    {#{% if movimentacao.tipomovimentacao.id == 1 %}#}
+                                        {#{{ teamcreator }}#}
+                                    {#{% else %}#}
+                                        {#&nbsp;#}
+                                    {#{% endif %}#}
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
+
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">
+                                    <strong>Entregador (Nome Legível)</strong>
+                                </div>
+
+                                <div class="panel-body">
+                                    &nbsp;
+                                    {#{% if movimentacao.tipomovimentacao.id == 2 %}#}
+                                        {#{{ teamcreator }}#}
+                                    {#{% else %}#}
+                                        {#&nbsp;#}
+                                    {#{% endif %}#}
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+
+                <div class="panel panel-default">
+
+                    <div class="panel-body">
+                        <div style="margin: auto; width: 85%">
+                            <small>RG.TI.06.00{{ movimentacao.tipomovimentacao.id }} - REGISTRO DE MOVIMENTAÇÃO DE SAÍDA DE EQUIPAMENTO NA TI</small>
+                            <strong>- Rev.01-02/03/17</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    {% endblock %}
+
+{% block footer %}
+
+    {#<footer class="main-footer">#}
+    {#<small>RG.TI.06.002 - REGISTRO DE MOVIMENTAÇÃO DE SAÍDA DE EQUIPAMENTO DA TI</small>#}
+    {#<strong>- Rev.01-10/01/17</strong>#}
+    {#</footer>#}
+
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+
+    <script>
+
+        $("#print").click(function(){
+
+            window.print();
+        });
+
+    </script>
+
+{% endblock %}

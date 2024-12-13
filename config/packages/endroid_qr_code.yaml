@@ -1,0 +1,12 @@
+endroid_qr_code:
+    default:
+        writer: Endroid\QrCode\Writer\PngWriter
+        size: 150
+        margin: 10
+        encoding: 'UTF-8'
+        error_correction_level: 'low'
+        round_block_size_mode: 'margin'
+        validate_result: false
+        #logo_path: '%kernel.project_dir%/assets/img/ico.png'
+        #logo_resize_to_width: 32
+        #logo_punchout_background: true

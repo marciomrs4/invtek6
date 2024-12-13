@@ -1,0 +1,87 @@
+{% extends "base/base.html.twig" %}
+
+{% block page_title %}{{ page_title | default('') }}{% endblock %}
+
+{% block first_row %} {% endblock %}
+
+{% block second_row %}
+    <!-- MEIO PAGINA-->
+              <div class="row">
+
+                    <div class="col-lg-3 col-md-3 col-sm-1 col-xs-1">
+
+                    </div>
+
+
+                    <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10">
+
+                        <!-- Widget: user widget style 1 -->
+                        <div class="card card-default">
+{# fix variable color on the place yellow  #}
+                            <div class="card-heading bg-{{ color }}-active">
+                            </div>
+
+                            <!-- /.box-header -->
+                            <div class="card-body">
+
+                                <div class="box box-widget widget-user">
+                                    <!-- Add the bg color to the header using any of the bg-* classes -->
+                                    <div class="widget-user-header bg-{{ color }}-active">
+                                        <h1 class="widget-user-username">
+                                            <strong>{{ company }}</strong>
+                                        </h1>
+                                        <h5 class="widget-user-desc">
+                                            {{ phrase }}
+                                        </h5>
+                                    </div>
+                                    <div class="widget-user-image">
+                                        {#<img class="img-circle" src="{{ asset('bundles/framework/images/logo_symfony.png') }}" alt="User Avatar">#}
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="row">
+                                            <div class="col-sm-4 border-right">
+                                                <div class="description-block">
+                                                    <h5 class="description-header">InvTek</h5>
+                                                    <span class="description-text">Controle de Ativos</span>
+                                                </div>
+                                                <!-- /.description-block -->
+                                            </div>
+                                            <!-- /.col -->
+                                            <div class="col-sm-4 border-right">
+                                                <div class="description-block">
+                                                    <h5 class="description-header">{{ version }}</h5>
+                                                    <span class="description-text">VERSÃO</span>
+                                                </div>
+                                                <!-- /.description-block -->
+                                            </div>
+
+                                            <div class="col-sm-4 border-right">
+                                                <div class="description-block">
+                                                    <h5 class="description-header">{{ 'now'|date('Y') }}</h5>
+                                                    <span class="description-text">{{ teamcreator }}</span>
+                                                </div>
+                                                <!-- /.description-block -->
+                                            </div>
+                                            <!-- /.col -->
+
+                                        </div>
+                                        <!-- /.row -->
+                                    </div>
+                                </div>
+                                <!-- /.widget-user -->
+
+
+                            </div>
+                            <!-- /.box-body -->
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-1 col-xs-1">
+
+                    </div>
+
+                </div>
+    <!-- FIM MEIO PAGINA-->
+{% endblock %}

@@ -1,0 +1,32 @@
+vich_uploader:
+    db_driver: orm
+
+    #mappings:
+    #    products:
+    #        uri_prefix: /images/products
+    #        upload_destination: '%kernel.project_dir%/public/images/products'
+    #        namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+    mappings:
+        mapeamento_equipamento:
+            uri_prefix: "/files/anexos/equipamentos"
+            upload_destination: "%kernel.project_dir%/public/files/anexos/equipamentos"
+            namer: vich_uploader.namer_origname
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+        mapeamento_acompanhamento:
+            uri_prefix: "/files/anexos/acompanhamentos"
+            upload_destination: "%kernel.project_dir%/public/files/anexos/acompanhamentos"
+            namer: vich_uploader.namer_origname
+        mapeamento_restore:
+            uri_prefix: "/files/anexos/restore"
+            upload_destination: "%kernel.project_dir%/public/files/anexos/restore"
+            namer: vich_uploader.namer_origname
+        mapeamento_backup:
+            uri_prefix: "/files/anexos/backup"
+            upload_destination: "%kernel.project_dir%/public/files/anexos/backup"
+            namer: vich_uploader.namer_origname
+        mapeamento_backup_compartilhado:
+            uri_prefix: "/files/anexos/backupcompartilhado"
+            upload_destination: "%kernel.project_dir%/public/files/anexos/backupcompartilhado"
+            namer: vich_uploader.namer_origname

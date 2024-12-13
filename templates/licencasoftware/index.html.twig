@@ -1,0 +1,73 @@
+{% extends 'base/index.html.twig' %}
+
+
+{% block page_title %}
+
+    <section class="content-header">
+        <h1>
+            Licença Software
+            <small>Listar</small>
+        </h1>
+    </section>
+
+{% endblock %}
+
+
+{% block first_row %}
+    <div class="row">
+
+        <div class="col-md-2">
+            <a href="{{ path('cadastro_licencasoftware_new', { 'software' : software.id}) }}" class="btn btn-{{ button_color }}">
+                <span class="ti ti-plus"></span>
+            </a>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2">
+            <a href="{{ path('cadastro_software_show', { 'id' : software.id}) }}" class="btn btn-{{ button_color }}" title"Mostrar Software">
+                <span class="ti ti-arrow-up"></span>
+            </a>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block table %}
+    <div class="row">
+        <h3>Software: {{ software.descricao }}</h3>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-condensed table-hover table-striped table-datatable">
+            <thead>
+                <tr>
+                    <th>Ações</th>
+                    <th>Nota fiscal</th>
+                    <th>Data emissão</th>
+                    <th>Valor unitário</th>
+                    <th>Quantidade total</th>
+                    <th>Anotações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for licencaSoftware in licencaSoftwares %}
+                    <tr>
+                        <td>
+                            <a href="{{ path('cadastro_licencasoftware_show', { 'id': licencaSoftware.id }) }}" class="btn btn-{{ button_color }}">
+                                <span class="ti ti-search"></span>
+                            </a>
+                            <a href="{{ path('cadastro_licencasoftware_edit', { 'id': licencaSoftware.id }) }}" class="btn btn-{{ button_color }}">
+                                <span class="ti ti-edit"></span>
+                            </a>
+                        </td>
+                        <td><a href="{{ path('cadastro_licencasoftware_show', { 'id': licencaSoftware.id }) }}">{{ licencaSoftware.notafiscal }}</a></td>
+                        <td>{% if licencaSoftware.dataemissao %}{{ licencaSoftware.dataemissao|date('Y-m-d') }}{% endif %}</td>
+                        <td>R$ {{ licencaSoftware.valorunitario | number_format(2,',','.') }}</td>
+                        <td>{{ licencaSoftware.quantidadetotal }}</td>
+                        <td>{{ licencaSoftware.anotacoes }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

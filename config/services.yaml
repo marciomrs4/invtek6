@@ -4,6 +4,19 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
+  base_url: '%env(base_url)%'
+  enviroment: '%env(enviroment)%'
+  company: '%env(company)%'
+  phrase: '%env(phrase)%'
+  version: '%env(version)%'
+  teamcreator: '%env(teamcreator)%'
+  do_ping: '%env(do_ping)%'
+  color: '%env(color)%'
+  tiposequipamentos: [3,13]
+  status_falha: '%env(status_falha)%'
+  importacao: '%env(importacao)%'
+  gestao_dados: '%env(gestao_dados)%'
+  gestao_ip: '%env(gestao_ip)%'
 
 services:
     # default configuration for services in *this* file

@@ -1,0 +1,100 @@
+{% extends('base/base.html.twig') %}
+
+{% block page_title %}{{ page_title | default('Lista') }}{% endblock %}
+
+{% block second_row %}
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="card  mb-3">
+                <div class="card-status-start bg-purple"></div>
+
+
+                <!-- MEIO PAGINA-->
+                <div class="card-body">
+
+                    <div class="card-title">
+
+
+                        {% for message in app.session.flashBag.get('notice') %}
+                            <div class="alert alert-success alert-dismissible" role="alert">
+                                <div class="d-flex">
+                                    <div>
+                                        <i class="ti ti-alert-icon"></i>
+                                    </div>
+                                    <div>
+                                        {{ message }}.
+                                    </div>
+                                </div>
+                                <a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>
+                            </div>
+                        {% endfor %}
+                        
+                    </div>
+
+                    {% block table %}                            
+
+                        <table class="table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th class="text-nowrap">Heading 1</th>
+                                    <th class="text-nowrap">Heading 2</th>
+                                    <th class="text-nowrap">Heading 3</th>
+                                    <th class="text-nowrap">Heading 4</th>
+                                    <th class="text-nowrap">Heading 5</th>
+                                    <th class="text-nowrap">Heading 6</th>
+                                    <th class="text-nowrap">Heading 7</th>
+                                    <th class="text-nowrap">Heading 8</th>
+                                    <th class="text-nowrap">Heading 9</th>
+                                    <th class="text-nowrap">Heading 10</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>1</th>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                    <td>Cell</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    {% endblock %}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ asset('js/datatables.min.js') }}"></script>
+    <script src="{{ asset('js/mrs-dataTable.js') }}"></script>
+
+{% endblock %}

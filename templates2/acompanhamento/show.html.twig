@@ -1,0 +1,156 @@
+{% extends 'template/template.html.twig' %}
+
+
+
+    {% block contentheader %}
+
+        <section class="content-header">
+            <h1>
+                Acompanhamento
+                <small>Mostrar</small>
+            </h1>
+        </section>
+
+    {% endblock %}
+
+    {% block firstrow %}
+
+        {% for message in app.session.flashBag.get('notice') %}
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <i class="fa fa-info"></i> {{ message }}. <i class="fa fa-smile-o"></i>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    {% endblock %}
+
+
+    {% block panelheading %}
+
+        <div class="row">
+
+            <div class="col-md-3 col-sm-3 col-xs-3">
+
+                <a href="{{ path('cadastro_acompanhamento_index', { 'equipamento': acompanhamento.equipamento.id }) }}" class="btn btn-primary btn-sm">
+                    <span class="fa fa-reply"></span>
+                    Listar Acompanhamentos
+                </a>
+
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-3">
+
+                <a href="{{ path('cadastro_acompanhamento_edit', { 'id': acompanhamento.id }) }}" class="btn btn-primary btn-sm">
+                    <span class="glyphicon glyphicon-edit"></span>
+                    Editar
+                </a>
+
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-3">
+
+                <a href="{{ path('cadastro_equipamento_show',{ 'id': acompanhamento.equipamento.id }) }}" class="btn btn-primary btn-sm">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    Mostrar Equipamento
+                </a>
+
+            </div>
+
+            <div class="col-md-2 col-sm-3 col-xs-3">
+                <div class="dropdown">
+                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <span class="glyphicon glyphicon-paperclip"></span>
+                        Anexo
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li>
+                            <a href="{{ path('cadastro_anexoacompanhamento_index',{ 'acompanhamento': acompanhamento.id }) }}">
+                                <span class="glyphicon glyphicon-list"></span>
+                                Listar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('cadastro_anexoacompanhamento_new',{ 'acompanhamento': acompanhamento.id }) }}">
+                                <span class="glyphicon glyphicon-plus"></span>
+                                Novo
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-3 col-xs-3">
+
+                <a href="{{ path('cadastro_custoequipamento_acompanhamento_new',{ 'acompanhamento': acompanhamento.id }) }}" class="btn btn-primary btn-sm">
+                    <span class="fa fa-money"></span>
+                    Adicionar Valor
+                </a>
+
+            </div>
+
+        </div>
+    {% endblock %}
+
+
+
+    {% block panelbody %}
+
+        <div class="table table-responsive">
+            <table class="table table-bordered table-condensed">
+                <tbody>
+                <tr>
+                    <th>Descrição</th>
+                    <td>{{ acompanhamento.descricao }}</td>
+                </tr>
+                <tr>
+                    <th>Data e hora</th>
+                    <td>{% if acompanhamento.datahora %}{{ acompanhamento.datahora|date('d-m-Y H:i:s') }}{% endif %}</td>
+                </tr>
+                <tr>
+                    <th>Tipo de Acompanhamento</th>
+                    <td>{{ acompanhamento.tipoacompanhamento.nome }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Custos Adicionados</h3>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered table-condensed table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th>Valor</th>
+                        <th>Descrição</th>
+                        <th>Data Criação</th>
+                        <th>Usuario</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for custo in custos %}
+                        <tr>
+                            <td>R$ {{ custo.valor | number_format(2,',','.')}}</td>
+                            <td>{{ custo.descricao }}</td>
+                            <td>{{ custo.dataCriacao|date('d-m-Y') }}</td>
+
+                                {% if custo.usuario is not empty %}
+                            <td>{{ custo.usuario.nome }}</td>
+                                {%  endif %}
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+    {% endblock %}

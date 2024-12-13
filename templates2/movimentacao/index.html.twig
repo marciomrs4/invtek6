@@ -1,0 +1,89 @@
+{% extends 'template/template.html.twig' %}
+
+{% block stylesheets %}
+
+    {{ parent() }}
+
+    <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap.css') }}">
+
+{% endblock %}
+
+    {% block contentheader %}
+
+
+        <section class="content-header">
+            <h1>
+                Movimentacao
+                <small>Listar</small>
+            </h1>
+        </section>
+
+
+    {% endblock %}
+
+
+    {% block panelheading %}
+        <a href="{{ path('movimentacao_new') }}" class="btn btn-primary btn-sm">
+            <span class="glyphicon glyphicon-plus"></span>
+            Novo
+        </a>
+    {% endblock %}
+
+    {% block panelbody %}
+        <div class="table-responsive">
+            <table class="table table-bordered table-condensed table-hover table-striped table-datatable">
+                <thead>
+                <tr>
+                    <th>Ações</th>
+                    <th>Movimentação</th>
+                    <th>Data Criação</th>
+                    <th>De</th>
+                    <th>Para</th>
+                    <th>Tipo</th>
+                    <th>Motivo</th>
+                    <th>Criador</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for movimentacao in movimentacaos %}
+                    <tr>
+                        <td>
+                            <a href="{{ path('movimentacao_show', { 'id': movimentacao.id }) }}" class="btn btn-primary btn-xs">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </a>
+                            {% if movimentacao.status %}
+                                <a href="#" class="btn btn-primary btn-xs" disabled="disabled">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </a>
+                            {% else %}
+                            <a href="{{ path('movimentacao_edit', { 'id': movimentacao.id }) }}" class="btn btn-primary btn-xs">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </a>
+                            {% endif %}
+                        </td>
+                        <td>{{ movimentacao.id }} | {{ movimentacao.datahora|date('d-m-Y') }}</a></td>
+                        <td>{{ movimentacao.datahora|date('d-m-Y') }}</td>
+                        <td>{{ movimentacao.usuarioOrigem.departamento }}</td>
+                        <td>{{ movimentacao.usuarioDestino.departamento }}</td>
+                        <td>{{ movimentacao.tipomovimentacao.nome }}</td>
+                        <td>{{ movimentacao.motivomovimentacao.descricao }}</td>
+                        <td>{{ movimentacao.usuarioCriador }}</td>
+                        <td>{% if movimentacao.status %}Finalizado{% else %}Aberto{% endif %}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+    {% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('js/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('js/dataTables.bootstrap.js') }}"></script>
+    <script src="{{ asset('js/mrs-dataTable.js') }}"></script>
+
+
+{% endblock %}

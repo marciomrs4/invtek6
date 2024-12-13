@@ -1,0 +1,99 @@
+{% extends 'template/template.html.twig' %}
+
+
+    {% block stylesheets %}
+
+        {{ parent() }}
+
+        <link rel="stylesheet" href="{{ asset('bundles/mrsinventario/css/dataTables.bootstrap.css') }}">
+
+    {% endblock %}
+
+    {% block contentheader %}
+
+
+        <section class="content-header">
+            <h1>
+                Registro de Backup
+                <small>Listar</small>
+            </h1>
+        </section>
+
+
+    {% endblock %}
+
+
+    {% block panelheading %}
+        <a href="{{ path('cadastro_registrobackup_new') }}" class="btn btn-primary btn-sm">
+            <span class="glyphicon glyphicon-plus"></span>
+            Novo
+        </a>
+        <a href="{{ path('cadastro_anexocompartilhado_new') }}" class="btn btn-primary btn-sm">
+            <span class="glyphicon glyphicon-plus"></span>
+            Anexo Compartilhado
+        </a>
+    {% endblock %}
+
+    {% block panelbody %}
+        <div class="table-responsive">
+            <table class="table table-bordered table-condensed table-hover table-striped table-datatable" data-order='[]'>
+                <thead>
+                <tr>
+                    <th>Ações</th>
+                    <th>Data de criação</th>
+                    <th>Job</th>
+                    <th>Status</th>
+                    <th>Observação</th>
+                    <th>Usuário</th>
+                    <th>Unidade</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for registroBackup in registroBackups %}
+
+                    {% if registroBackup.status == status_falha %}
+                        <tr class="danger">
+                    {% else %}
+                        <tr>
+                    {% endif %}
+                    <td>
+                        <a href="{{ path('cadastro_registrobackup_show', { 'id': registroBackup.id }) }}" class="btn btn-primary btn-xs">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        {% if "now"|date('Y-m-d') == registroBackup.dataCriacao|date('Y-m-d') %}
+                            <a href="{{ path('cadastro_registrobackup_edit', { 'id': registroBackup.id }) }}" class="btn btn-primary btn-xs">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </a>
+                        {% endif %}
+                    </td>
+                    <td><a href="{{ path('cadastro_registrobackup_show', { 'id': registroBackup.id }) }}">{{ registroBackup.data|date('d-m-Y') }}</a></td>
+                    <td>{{ registroBackup.jobName }}</td>
+                    <td>{{ registroBackup.status}}</td>
+                    <td>{{ registroBackup.observacao}}</td>
+                    <td>{{ registroBackup.user}}</td>
+                    <td>{{ registroBackup.job.unidade.nome }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+    {% endblock %}
+
+    {% block panelfooter %}
+        <a href="{{ path('report_backup_job') }}" class="btn btn-primary btn-sm">
+            <span class="glyphicon glyphicon-list"></span>
+            Verificar Jobs
+        </a>
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ parent() }}
+
+        <script src="{{ asset('bundles/mrsinventario/js/jquery.dataTables.js') }}"></script>
+        <script src="{{ asset('bundles/mrsinventario/js/dataTables.bootstrap.js') }}"></script>
+        <script src="{{ asset('bundles/mrsinventario/js/mrs-dataTable.js') }}"></script>
+
+
+    {% endblock %}

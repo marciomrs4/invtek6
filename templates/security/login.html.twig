@@ -1,0 +1,97 @@
+{% extends 'security/login_base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block stylesheets %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+    <link href="{{ asset('css/tabler.min.css') }}" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" href="{{ asset('css/tabler-icons.css') }}">
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+                &ThinSpace;
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-3 col-md-4 col-xs-1">
+                {# Lado esquerdo#}
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-xs-10">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="panel-title">
+                            Acesso ao Sistema
+                        </h3>
+                    </div>
+                    <div class="card-status-top bg-purple"></div>
+                    <div class="card-body">
+
+                        <form method="post">
+
+                            <div class="form-group">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                        Usuário:
+                                <input type="text" value="{{ last_username }}" name="_username" id="username" class="form-control" autocomplete="username" placeholder="Usuario" required autofocus>                                
+                            </div>
+
+                            <div class="form-group">
+                                <span class="glyphicon glyphicon-lock"></span>
+                                    Senha:
+                                <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" placeholder="Senha" required>
+                            </div>
+
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                            <button class="btn btn-default" type="submit">
+                                <span class="ti ti-login-2"></span>
+                                Entrar
+                            </button>
+                            
+                        </form>
+
+                    </div>
+                    <div class="card-footer">
+                        {% if error %}
+                            <div class="alert alert-danger" role="alert">
+                                <span class="glyphicon glyphicon-ban-circle"></span>
+                                {{ error.messageKey|trans(error.messageData, 'security') }}
+                            </div>
+                        {% endif %}
+                        
+                        {% if app.user %}
+                            <div class="alert alert-info" role="alert">
+                                <span class="glyphicon glyphicon-ban-circle"></span>
+                                You are logged in as {{ app.user.userIdentifier }}, 
+                                <a href="{{ path('app_logout') }}">Sair</a>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-4 col-xs-1">
+                {# lado direito #}
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+{% endblock %}

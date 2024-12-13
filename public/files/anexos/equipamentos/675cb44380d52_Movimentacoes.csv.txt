@@ -1,0 +1,6 @@
+Equipamento;Patrimônio;Número de Série;Quantidade;Tipo de Movimentações
+Bluear-011;BLUEAR011;37465;1;Manutenção
+Vostro 3470;BLUEAR046;5BPYZ23;1;Manutenção
+Vostro 3470;BLUEAR045;5BZSZ23;1;Emprestimo
+Bluear-001;BLUEAR001;MT7022039203106;1;Manutenção
+OptiPlex 3080;BLUEAR048;4QG9ZH3;1;Manutenção

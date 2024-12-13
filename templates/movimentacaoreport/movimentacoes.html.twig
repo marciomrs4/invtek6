@@ -1,0 +1,172 @@
+{% extends 'base/index.html.twig' %}
+
+{% block page_title %}
+
+        <section class="content-header">
+            <h1>
+                Movimentações
+                <small>Relatórios de Movimentações | Encontrado(s) {{ movimentacoes|length }}</small>
+            </h1>
+        </section>
+
+{% endblock %}
+
+{% block first_row %}
+
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                <div class="card">
+                    <!-- /.box-header -->
+                    <div class="card-status-top bg-purple"></div>
+                    <div class="card-body">
+
+                        {{ form_start(form, { 'attr':{ 'novalidate':'novalidate' }}) }}
+
+                        <div class="row">
+
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+
+                                <div class="form-group">
+                                    {{ form_row(form.dataMovimentacaoA) }}
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+
+                                <div class="form-group">
+                                    {{ form_row(form.dataMovimentacaoB) }}
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <div class="form-group">
+
+                                            <button class="btn btn-{{ button_color }}">
+                                                <span class="ti ti-search"></span>
+                                            </button>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <div class="form-group">
+
+                                            <button class="btn btn-{{ button_color }}" id="export-excel"
+                                                    data-toggle="tooltip" data-placement="top" data-delay="5000"
+                                                    title="Para baixar um novo excel faça uma nova busca">
+                                                <span class="ti ti-download"></span>
+                                            </button>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        {{ form_end(form) }}
+
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+        </div>
+{% endblock %}
+
+{% block table %}
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                <div class="card">
+
+                    <div class="card-body">
+
+                        <div class="table-responsive">
+
+<table class="table table-bordered table-condensed table-hover table-striped table-datatable">
+
+                                <thead>
+                                <tr>
+                                    <th>Ações</th>
+                                    <th>Equipamento</th>
+                                    <th>Patrimônio</th>
+                                    <th>Número de Série</th>
+                                    <th>Quantidade</th>
+                                    <th>Tipo de Movimentações</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for movimentacao in movimentacoes %}
+
+                                    <tr>
+                                        <td>
+                                            <a href="{{ path('cadastro_equipamento_show', {'id': movimentacao.id }) }}"
+                                               class="btn btn-{{ button_color }}"
+                                               title="Ir para o equipamento">
+                                                <span class="ti ti-search"></span>
+                                            </a>
+                                        </td>
+                                        <td>{{ movimentacao.equipamentoNome }}</td>
+                                        <td>{{ movimentacao.patrimonio }}</td>
+                                        <td>{{ movimentacao.numeroSerie }}</td>
+                                        <td>{{ movimentacao.quantidadeMovimentacoes }}</td>
+                                        <td>{{ movimentacao.tipoMovimentacao }}</td>
+                                    </tr>
+
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <a href="{{ path('report_export_relatorio_movimentacoes') }}" id="link">
+
+    {% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+
+    <script src="{{ asset('js/jquery-download.js') }}"></script>
+
+    <script>
+
+        $(document).ready(function(){
+
+            var url = $('#link').attr('href');
+
+            $('#export-excel').click(function(){
+
+                $('#export-excel').attr('disabled','disabled');
+
+                $.fileDownload(url,{
+                    httpMethod: "GET",
+                    data:{
+                        dataCompraA : $('#report_movimentacoes_dataMovimentacaoA').val(),
+                        dataCompraB : $('#report_movimentacoes_dataMovimentacaoB').val()
+                    }
+                });
+
+
+            });
+
+        });
+
+    </script>
+
+{% endblock %}

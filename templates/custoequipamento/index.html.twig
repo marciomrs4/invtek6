@@ -1,0 +1,105 @@
+{% extends 'base/index.html.twig' %}
+
+
+{% block page_title %}
+
+    <section class="content-header">
+        <h1>
+            Custo Equipamento
+            <small>Listar</small>
+        </h1>
+    </section>
+
+{% endblock %}
+
+
+{% block first_row %}
+    <div class="row">
+
+        <div class="col-md-2">
+            <a href="{{ path('cadastro_custoequipamento_new',{ 'equipamento' : equipamento.id }) }}" class="btn btn-{{ button_color }}">
+                <span class="ti ti-plus"></span>
+            </a>
+        </div>
+
+        <div class="col-md-2">
+            <a href="{{ path('cadastro_equipamento_show',{ 'id' : equipamento.id }) }}" class="btn btn-{{ button_color }}" title="Mostrar Equipamento">
+                <span class="ti ti-arrow-up"></span>
+            </a>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block table %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Equipamento: {{ equipamento.nome }} | {{ equipamento.centroMovimentacao }}</h4>  
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-condensed table-hover table-striped">
+                    <tbody>
+                        <tr>
+                            <th>Total</th>
+                            <td>R$ {{ custo.total | number_format(2,',','.')}}</td>
+                            <th>Média</th>
+                            <td>R$ {{ custo.media| number_format(2,',','.')}}</td>
+                            <th>Data da Compra</th>
+                            <td>{{ equipamento.dataCompra | date('d-m-Y') }}</td>
+                            <th>Valor da Compra</th>
+                            <td>R$ {{ equipamento.valorCompra | number_format(2,',','.') }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-condensed table-hover table-striped table-datatable">
+            <thead>
+                <tr>
+                    <th>Ações</th>
+                    <th>Valor</th>
+                    <th>Descricao</th>
+                    <th>Data Lançamento</th>
+                    <th>Acompanhamento</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for custoEquipamento in custoEquipamentos %}
+                    <tr>
+                        <td>
+                            <a href="{{ path('cadastro_custoequipamento_show', { 'id': custoEquipamento.id }) }}" class="btn btn-{{ button_color }}"
+                               title="Mostar Custo">
+                                <span class="ti ti-search"></span>
+                            </a>
+                            <a href="{{ path('cadastro_custoequipamento_edit', { 'id': custoEquipamento.id }) }}" class="btn btn-{{ button_color }}"
+                               title="Editar Custo">
+                                <span class="ti ti-edit"></span>
+                            </a>
+                        </td>
+                        <td>R$ {{ custoEquipamento.valor |number_format(2,',','.') }}</a></td>
+                        <td>{{ custoEquipamento.descricao }}</td>
+                        <td>{{ custoEquipamento.dataCriacao| date('d-m-Y') }}</td>
+                        <td>
+                            {% if custoEquipamento.acompanhamento %}
+                                {{ custoEquipamento.acompanhamento.tipoacompanhamento.nome }}
+                            {% else %}
+                                -
+                            {% endif %}
+
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

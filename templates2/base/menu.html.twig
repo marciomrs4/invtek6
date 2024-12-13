@@ -1,0 +1,460 @@
+<!-- Menu Lateral principal -->
+<div id="navbar-menu" class="collapse navbar-collapse">
+
+    <ul class="navbar-nav pt-lg-3">
+        <li id="dashboard" class="nav-item">
+            <a class="nav-link" href="{{ path('dashboard_version') }}">
+                <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                        class="fas fa-tachometer-alt"></i></span>
+
+                <span class="nav-link-title">Dashboard</span>
+            </a>
+
+        </li>
+
+
+
+        <li id="contract" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle navbar-menu-contract" role="button"
+               data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="true">
+                <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                        class="fas fa-balance-scale"></i></span>
+
+                <span class="nav-link-title">Operações</span>
+            </a>
+            <div class="dropdown-menu " data-bs-popper="none">
+                <div class="dropdown-menu-columns">
+                    <div class="dropdown-menu-column">
+                        <a class="dropdown-item  navbar-menu-contract_status" href="{{ path('movimentacao_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-calculator"></i></span>
+                            Movimentações
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </li>
+
+        <li id="invoices" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle navbar-menu-invoices" role="button"
+               data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="true">
+                <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                        class="fas fa-file-contract"></i></span>
+
+                <span class="nav-link-title">Painéis</span>
+            </a>
+            <div class="dropdown-menu " data-bs-popper="none">
+                <div class="dropdown-menu-columns">
+                    <div class="dropdown-menu-column">
+                        <a class="dropdown-item  navbar-menu-invoice" href="{{ path('report_painel_equipamento') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-file-contract"></i></span>
+
+                            Equipamento
+
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-invoice_listing"
+                           href="{{ path('report_qrcode_equipamento') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-list"></i></span>
+
+                            QrCode Equipamento
+
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </li>
+
+        <li id="admin" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle navbar-menu-admin" role="button"
+               data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="true">
+                <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                        class="fas fa-toolbox"></i></span>
+
+                <span class="nav-link-title">Relatórios</span>
+            </a>
+
+            <div class="dropdown-menu " data-bs-popper="none">
+                <div class="dropdown-menu-columns">
+                    <div class="dropdown-menu-column">
+
+                        <a class="dropdown-item  navbar-menu-customers" href="{{ path('report_relatorio_equipamentos') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center">
+                            Equipamentos
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-projects" href="{{ path('report_experied') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center">
+                            Equipamentos em Garantia
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-activities" href="{{ path('report_list_inventario') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-tasks"></i></span>
+
+                            Lista de Inventário
+
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-tags" href="{{ path('report_comprados') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-tags"></i></span>
+
+                            Equipamentos Comprados
+
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-tags" href="{{ path('report_movimentacoes') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-tags"></i></span>
+
+                            Movimentações
+
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </li>
+
+        <li id="invoices" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle navbar-menu-invoices" role="button"
+               data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="true">
+                <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                        class="fas fa-file-contract"></i></span>
+
+                <span class="nav-link-title">Graficos</span>
+            </a>
+
+            <div class="dropdown-menu " data-bs-popper="none">
+                <div class="dropdown-menu-columns">
+                    <div class="dropdown-menu-column">
+
+                        <a class="dropdown-item  navbar-menu-invoice" 
+                           href="{{ path('report_chart_equipamento_by_centro_movimentacao') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-file-contract"></i></span>
+
+                            Equipamentos por Centros
+
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-invoice_listing"
+                           href="{{ path('report_acompanhamento_equipamento') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-list"></i></span>
+
+                            Acompanhamentos
+
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-invoice_listing"
+                           href="{{ path('report_equipamento_no_acompanhamento') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-list"></i></span>
+
+                            Sem Acompanhamento
+
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </li>
+
+
+        <li id="system" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle navbar-menu-system" role="button"
+               data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="true">
+                <span class="nav-link-icon d-md-none d-lg-inline-block text-center">
+                    
+                </span>
+
+                <span class="nav-link-title">Cadastros</span>
+            </a>
+
+            <div class="dropdown-menu " data-bs-popper="none">
+                <div class="dropdown-menu-columns">
+                    <div class="dropdown-menu-column">
+                        <a class="dropdown-item  navbar-menu-users" href="{{ path('cadastro_unidade_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-user-friends"></i></span>
+
+                            Unidade
+
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-roles" href="{{ path('cadastro_centromovimentacao_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-user-lock"></i></span>
+
+                            Centro de Movimentacao
+
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-teams" href="{{ path('cadastro_usuario_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-users"></i></span>
+
+                            Usuários
+
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </li>
+
+        <li id="invoices" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle navbar-menu-invoices" role="button"
+               data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="true">
+                <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                        class="fas fa-file-contract"></i></span>
+
+                <span class="nav-link-title">Movimentação</span>
+            </a>
+            <div class="dropdown-menu " data-bs-popper="none">
+                <div class="dropdown-menu-columns">
+                    <div class="dropdown-menu-column">
+                        <a class="dropdown-item  navbar-menu-invoice" href="{{ path('cadastro_tipomovimentacao_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-file-contract"></i></span>
+
+                            Tipo de Movimentação
+
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-invoice_listing"
+                           href="{{ path('cadastro_motivomovimentacao_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-list"></i></span>
+
+                            Motivo de Movimentação
+
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </li>
+
+        <li id="invoices" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle navbar-menu-invoices" role="button"
+               data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="true">
+                <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                        class="fas fa-file-contract"></i></span>
+                <span class="nav-link-title">Equipamentos</span>
+            </a>
+            <div class="dropdown-menu " data-bs-popper="none">
+                <div class="dropdown-menu-columns">
+                    <div class="dropdown-menu-column">
+
+                        <a class="dropdown-item  navbar-menu-invoice" 
+                           href="{{ path('cadastro_equipamento_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-file-contract"></i></span>
+                            Equipamento
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-invoice_listing"
+                           href="{{ path('cadastro_tipoequipamento_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-list"></i></span>
+                            Tipo de Equipamento
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-invoice_listing"
+                           href="{{ path('cadastro_fornecedor_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-list"></i></span>
+                            Fornecedor
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-invoice_listing"
+                           href="{{ path('cadastro_marca_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-list"></i></span>
+                            Marca
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-invoice_listing"
+                           href="{{ path('cadastro_tipoacompanhamento_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-list"></i></span>
+                            Tipo de Acompanhamento
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </li>
+
+        <li id="invoices" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle navbar-menu-invoices" role="button"
+               data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="true">
+                <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                        class="fas fa-file-contract"></i></span>
+
+                <span class="nav-link-title">Software</span>
+            </a>
+            <div class="dropdown-menu " data-bs-popper="none">
+                <div class="dropdown-menu-columns">
+                    <div class="dropdown-menu-column">
+                        <a class="dropdown-item  navbar-menu-invoice" href="{{ path('cadastro_software_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-file-contract"></i></span>
+                            Software
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-invoice_listing"
+                           href="{{ path('cadastro_tiposoftware_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-list"></i></span>
+                            Tipo de Software
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-invoice_listing"
+                           href="{{ path('cadastro_fornecedorsoftware_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-list"></i></span>
+                            Fornecedor de Software
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </li>
+
+        <li id="invoices" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle navbar-menu-invoices" role="button"
+               data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="true">
+                <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                        class="fas fa-file-contract"></i></span>
+
+                <span class="nav-link-title">Componente</span>
+            </a>
+            <div class="dropdown-menu " data-bs-popper="none">
+                <div class="dropdown-menu-columns">
+                    <div class="dropdown-menu-column">
+                        <a class="dropdown-item  navbar-menu-invoice" 
+                           href="{{ path('cadastro_componente_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-file-contract"></i></span>
+
+                            Componente
+
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-invoice_listing"
+                           href="{{ path('cadastro_tipocomponente_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-list"></i></span>
+
+                            Tipo de Componente
+
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </li>
+
+        <li id="invoices" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle navbar-menu-invoices" role="button"
+               data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="true">
+                <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                        class="fas fa-file-contract"></i></span>
+
+                <span class="nav-link-title">Gerênciamento de IP</span>
+            </a>
+            <div class="dropdown-menu " data-bs-popper="none">
+                <div class="dropdown-menu-columns">
+                    <div class="dropdown-menu-column">
+                        <a class="dropdown-item  navbar-menu-invoice" 
+                           href="{{ path('cadastro_enderecoip_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-file-contract"></i></span>
+
+                            Controle de IP
+
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-invoice_listing"
+                           href="{{ path('cadastro_statusip_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-list"></i></span>
+
+                            Status
+
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-invoice_listing"
+                           href="{{ path('cadastro_tipoacessoip_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-list"></i></span>
+
+                            Tipo de Acesso
+
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </li>
+        
+                        {%  if is_granted('ROLE_SUPER_ADMIN') %}
+                <li id="invoices" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle navbar-menu-invoices" role="button"
+               data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="true">
+                <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                        class="fas fa-file-contract"></i></span>
+
+                <span class="nav-link-title">Administração</span>
+            </a>
+            <div class="dropdown-menu " data-bs-popper="none">
+                <div class="dropdown-menu-columns">
+                    <div class="dropdown-menu-column">
+                        <a class="dropdown-item  navbar-menu-invoice" 
+                           href="{{ path('app_user_index') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-file-contract"></i></span>
+
+                            Login
+
+                        </a>
+
+                        <a class="dropdown-item  navbar-menu-invoice_listing"
+                           href="{{ path('dh_auditor_list_audits') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block text-center"><i
+                                    class="fas fa-list"></i></span>
+
+                            Auditoria
+
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </li>
+                {% endif %}
+
+    </ul>
+
+</div>
+<!-- Fim Menu principal -->

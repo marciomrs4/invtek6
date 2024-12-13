@@ -1,0 +1,94 @@
+{% extends 'base/main.html.twig' %}
+
+
+{% block page_title %}
+
+    <section class="content-header">
+        <h1>
+            Movimentacao
+            <small>Novo</small>
+        </h1>
+    </section>
+
+{% endblock %}
+
+
+{% block first_row %}
+
+    <div class="row">
+
+        <div class="col-md-2 col-sm-3 col-xs-3">
+
+            <a href="{{ path('movimentacao_index') }}" class="btn btn-{{ button_color }}">
+                <span class="ti ti-arrow-left"></span>
+            </a>
+
+        </div>
+    </div>
+            
+{% endblock %}
+
+
+{% block card_body %}
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+
+    <span class="form-label"></span>
+    <button type="submit" class="btn btn-{{ button_color }}">
+        <span class="ti ti-device-floppy"></span>
+    </button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('movimentacao_new') }}" id="link"></a>
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+    {{ parent() }}
+
+    <script>
+        
+        let $tipoMovimentacao = $('#movimentacao_tipomovimentacao');
+        // When sport gets selected ...
+        $tipoMovimentacao.change(function () {
+
+            //var $form = $(this).closest('form');
+            let url = $("#link").attr('href');
+
+            //alert(url);
+
+            // alert('Change: ' + $form.attr('action') + $form.attr('method'));
+            // ... retrieve the corresponding form.
+
+            // Simulate form data, but only include the selected sport value.
+            let data = {};
+
+            data = $tipoMovimentacao.serialize();
+
+            // Submit data via AJAX to the form's action path.
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: data,
+                success: function (html) {
+
+                    //$("#load").html(html);
+                    // Replace current position field ...
+                    $('#movimentacao_motivomovimentacao').replaceWith(
+                            // ... with the returned one from the AJAX response.
+                            $(html).find('#movimentacao_motivomovimentacao')
+                            );
+                    // Position field now displays the appropriate positions.
+                },
+                error: function (err) {
+                    $("#loader").html(err);
+                }
+            });
+
+        });
+
+    </script>
+{% endblock %}
