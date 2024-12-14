@@ -21,18 +21,20 @@ class UserFixtures extends Fixture
     {        
         $usuario1 = new User();
         
-        $pass1 = $this->userHash->hashPassword($usuario1,'admin');
+        $pass1 = $this->userHash->hashPassword($usuario1,'NBCul32djNJOHJU');
         
         $usuario1->setUsername('admin')
             ->setPassword($pass1)
+            ->setStatus(true)
             ->setRoles(array('ROLE_SUPER_ADMIN','ROLE_ADMIN','ROLE_USER'))
             ->eraseCredentials();
 
         $usuario2 = new User();
 
-        $pass2 = $this->userHash->hashPassword($usuario1,'user');
+        $pass2 = $this->userHash->hashPassword($usuario1,'RQsOraZPtye1r1y');
         
         $usuario2->setUsername('user')
+                ->setStatus(true)
             ->setPassword($pass2)
             ->setRoles(['ROLE_USER'])
             ->eraseCredentials();
