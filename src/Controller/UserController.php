@@ -35,7 +35,8 @@ final class UserController extends AbstractController
                          
             $pass = $hash->hashPassword($user, $form->getData()->getPassword());
      
-            $user->setPassword($pass);
+            $user->setPassword($pass)
+                    ->setStatus(true);
             
             $entityManager->persist($user);
             $entityManager->flush();
