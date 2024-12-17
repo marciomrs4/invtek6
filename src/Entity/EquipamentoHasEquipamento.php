@@ -62,7 +62,7 @@ class EquipamentoHasEquipamento
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -73,7 +73,7 @@ class EquipamentoHasEquipamento
      * @param App\Entity\Equipamento $equipamentoFilho
      * @return EquipamentoHasEquipamento
      */
-    public function setEquipamentoFilho(Equipamento $equipamentoFilho = null)
+    public function setEquipamentoFilho(Equipamento $equipamentoFilho = null): EquipamentoHasEquipamento
     {
         $this->equipamentoFilho = $equipamentoFilho;
 
@@ -85,7 +85,7 @@ class EquipamentoHasEquipamento
      *
      * @return App\Entity\Equipamento 
      */
-    public function getEquipamentoFilho()
+    public function getEquipamentoFilho(): App\Entity\Equipamento
     {
         return $this->equipamentoFilho;
     }
@@ -96,7 +96,7 @@ class EquipamentoHasEquipamento
      * @param App\Entity\Equipamento $equipamentoPai
      * @return EquipamentoHasEquipamento
      */
-    public function setEquipamentoPai(Equipamento $equipamentoPai = null)
+    public function setEquipamentoPai(Equipamento $equipamentoPai = null): EquipamentoHasEquipamento
     {
         $this->equipamentoPai = $equipamentoPai;
 
@@ -108,7 +108,7 @@ class EquipamentoHasEquipamento
      *
      * @return \MRS\InventarioBundle\Entity\Equipamento 
      */
-    public function getEquipamentoPai()
+    public function getEquipamentoPai(): \MRS\InventarioBundle\Entity\Equipamento
     {
         return $this->equipamentoPai;
     }

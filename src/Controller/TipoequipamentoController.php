@@ -166,7 +166,7 @@ class TipoequipamentoController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Tipoequipamento $tipoequipamento)
+    private function createDeleteForm(Tipoequipamento $tipoequipamento): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_tipoequipamento_delete', array('id' => $tipoequipamento->getId())))

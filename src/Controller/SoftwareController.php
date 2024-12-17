@@ -148,7 +148,7 @@ class SoftwareController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Software $software)
+    private function createDeleteForm(Software $software): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_software_delete', array('id' => $software->getId())))

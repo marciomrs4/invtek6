@@ -138,7 +138,7 @@ class UnidadeController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Unidade $unidade)
+    private function createDeleteForm(Unidade $unidade): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_unidade_delete', array('id' => $unidade->getId())))

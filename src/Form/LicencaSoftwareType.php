@@ -19,7 +19,7 @@ class LicencaSoftwareType extends AbstractType
      * @param FormBuilderInterface $builder
      * @param array $options
      */
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('nota_fiscal',TextType::class,array('label'=>'Nota fiscal',
@@ -40,7 +40,7 @@ class LicencaSoftwareType extends AbstractType
     /**
      * @param OptionsResolver $resolver
      */
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults(array(
             'data_class' => LicencaSoftware::class

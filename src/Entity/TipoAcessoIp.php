@@ -30,7 +30,7 @@ class TipoAcessoIp
      *
      * @return TipoAcessoIp
      */
-    public function setNome($nome)
+    public function setNome($nome): TipoAcessoIp
     {
         $this->nome = $nome;
 
@@ -42,7 +42,7 @@ class TipoAcessoIp
      *
      * @return string
      */
-    public function getNome()
+    public function getNome(): string
     {
         return $this->nome;
     }
@@ -52,7 +52,7 @@ class TipoAcessoIp
      *
      * @return integer
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }

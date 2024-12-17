@@ -115,7 +115,7 @@ class Anexo
     /**
      * @return string
      */
-    public function getDataalteracao()
+    public function getDataalteracao(): string
     {
         return $this->dataalteracao;
     }
@@ -124,7 +124,7 @@ class Anexo
      * @param string $dataalteracao
      * @return Anexo
      */
-    public function setDataalteracao($dataalteracao)
+    public function setDataalteracao($dataalteracao): Anexo
     {
         $this->dataalteracao = $dataalteracao;
         return $this;
@@ -133,7 +133,7 @@ class Anexo
     /**
      * @return File
      */
-    public function getImageFile()
+    public function getImageFile(): File
     {
         return $this->imageFile;
     }
@@ -142,7 +142,7 @@ class Anexo
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $imageFile
      * @return Anexo
      */
-    public function setImageFile(File $imageFile)
+    public function setImageFile(File $imageFile): Anexo
     {
         $this->imageFile = $imageFile;
 
@@ -156,7 +156,7 @@ class Anexo
     /**
      * @return string
      */
-    public function getImageName()
+    public function getImageName(): string
     {
         return $this->imageName;
     }
@@ -165,7 +165,7 @@ class Anexo
      * @param string $imageName
      * @return Anexo
      */
-    public function setImageName($imageName)
+    public function setImageName($imageName): Anexo
     {
         $this->imageName = $imageName;
         return $this;
@@ -180,7 +180,7 @@ class Anexo
      * @param string $nome
      * @return Anexo
      */
-    public function setNome($nome)
+    public function setNome($nome): Anexo
     {
         $this->nome = $nome;
 
@@ -192,7 +192,7 @@ class Anexo
      *
      * @return string 
      */
-    public function getNome()
+    public function getNome(): string
     {
         return $this->nome;
     }
@@ -203,7 +203,7 @@ class Anexo
      * @param string $datacriacao
      * @return Anexo
      */
-    public function setDatacriacao($datacriacao)
+    public function setDatacriacao($datacriacao): Anexo
     {
         $this->datacriacao = $datacriacao;
 
@@ -215,7 +215,7 @@ class Anexo
      *
      * @return string 
      */
-    public function getDatacriacao()
+    public function getDatacriacao(): string
     {
         return $this->datacriacao;
     }
@@ -225,7 +225,7 @@ class Anexo
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -236,7 +236,7 @@ class Anexo
      * @param App\Entity\Equipamento $equipamento
      * @return Anexo
      */
-    public function setEquipamento(Equipamento $equipamento = null)
+    public function setEquipamento(Equipamento $equipamento = null): Anexo
     {
         $this->equipamento = $equipamento;
 
@@ -248,7 +248,7 @@ class Anexo
      *
      * @return App\Entity\Equipamento 
      */
-    public function getEquipamento()
+    public function getEquipamento(): App\Entity\Equipamento
     {
         return $this->equipamento;
     }

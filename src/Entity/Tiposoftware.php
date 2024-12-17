@@ -43,7 +43,7 @@ class Tiposoftware
      * @param string $descricao
      * @return Tiposoftware
      */
-    public function setDescricao($descricao)
+    public function setDescricao($descricao): Tiposoftware
     {
         $this->descricao = $descricao;
 
@@ -55,7 +55,7 @@ class Tiposoftware
      *
      * @return string 
      */
-    public function getDescricao()
+    public function getDescricao(): string
     {
         return $this->descricao;
     }
@@ -65,7 +65,7 @@ class Tiposoftware
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }

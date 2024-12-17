@@ -171,7 +171,7 @@ class LicencaSoftwareController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(LicencaSoftware $licencaSoftware)
+    private function createDeleteForm(LicencaSoftware $licencaSoftware): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_licencasoftware_delete', array('id' => $licencaSoftware->getId())))

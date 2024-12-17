@@ -139,7 +139,7 @@ class TiposoftwareController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Tiposoftware $tiposoftware)
+    private function createDeleteForm(Tiposoftware $tiposoftware): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_tiposoftware_delete', array('id' => $tiposoftware->getId())))

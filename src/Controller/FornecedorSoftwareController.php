@@ -139,7 +139,7 @@ class FornecedorSoftwareController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(FornecedorSoftware $fornecedorSoftware)
+    private function createDeleteForm(FornecedorSoftware $fornecedorSoftware): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_fornecedorsoftware_delete', array('id' => $fornecedorSoftware->getId())))

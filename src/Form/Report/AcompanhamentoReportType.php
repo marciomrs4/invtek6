@@ -18,7 +18,7 @@ class AcompanhamentoReportType extends AbstractType
      * @param FormBuilderInterface $builder
      * @param array $options
      */
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('tipoequipamento',EntityType::class,array('label'=>'Tipo de Equipamento',
@@ -33,7 +33,7 @@ class AcompanhamentoReportType extends AbstractType
     }
 
 
-    public function getBlockPrefix()
+    public function getBlockPrefix(): string
     {
         return 'report_acompanhamento';
     }

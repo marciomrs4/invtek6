@@ -56,7 +56,7 @@ class Motivomovimentacao
      * @param string $descricao
      * @return Motivomovimentacao
      */
-    public function setDescricao($descricao)
+    public function setDescricao($descricao): Motivomovimentacao
     {
         $this->descricao = $descricao;
 
@@ -68,7 +68,7 @@ class Motivomovimentacao
      *
      * @return string 
      */
-    public function getDescricao()
+    public function getDescricao(): string
     {
         return $this->descricao;
     }
@@ -78,7 +78,7 @@ class Motivomovimentacao
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -89,7 +89,7 @@ class Motivomovimentacao
      * @param App\Entity\Tipomovimentacao $tipomovimentacao
      * @return Motivomovimentacao
      */
-    public function setTipomovimentacao(Tipomovimentacao $tipomovimentacao = null)
+    public function setTipomovimentacao(Tipomovimentacao $tipomovimentacao = null): Motivomovimentacao
     {
         $this->tipomovimentacao = $tipomovimentacao;
 
@@ -101,7 +101,7 @@ class Motivomovimentacao
      *
      * @return App\Entity\Tipomovimentacao 
      */
-    public function getTipomovimentacao()
+    public function getTipomovimentacao(): App\Entity\Tipomovimentacao
     {
         return $this->tipomovimentacao;
     }

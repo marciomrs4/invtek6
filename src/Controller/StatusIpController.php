@@ -118,7 +118,7 @@ class StatusIpController extends AbstractController
      * @Route("/{id}", name="cadastro_statusip_delete")
      * @Method("DELETE")
      */
-    #[Route('/{id}', name:'cadastro_statusip_delete', methods:['DELETE'])]             
+    #[Route('/{id}', name:'cadastro_statusip_delete', methods:['POST'])]             
     public function deleteAction(Request $request, StatusIp $statusIp)
     {
         $form = $this->createDeleteForm($statusIp);
@@ -154,7 +154,7 @@ class StatusIpController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(StatusIp $statusIp)
+    private function createDeleteForm(StatusIp $statusIp): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_statusip_delete', array('id' => $statusIp->getId())))

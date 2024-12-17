@@ -136,7 +136,7 @@ class TipomovimentacaoController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Tipomovimentacao $tipomovimentacao)
+    private function createDeleteForm(Tipomovimentacao $tipomovimentacao): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_tipomovimentacao_delete', array('id' => $tipomovimentacao->getId())))

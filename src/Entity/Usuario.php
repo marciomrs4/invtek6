@@ -110,7 +110,7 @@ class Usuario
     /**
      * @return string
      */
-    public function getNumeroIdentificacao()
+    public function getNumeroIdentificacao(): string
     {
         return $this->numeroIdentificacao;
     }
@@ -119,7 +119,7 @@ class Usuario
      * @param string $numeroIdentificacao
      * @return Usuario
      */
-    public function setNumeroIdentificacao($numeroIdentificacao)
+    public function setNumeroIdentificacao($numeroIdentificacao): Usuario
     {
         $this->numeroIdentificacao = $numeroIdentificacao;
         return $this;
@@ -129,7 +129,7 @@ class Usuario
     /**
      * @return string
      */
-    public function getObservacao()
+    public function getObservacao(): string
     {
         return $this->observacao;
     }
@@ -138,7 +138,7 @@ class Usuario
      * @param string $observacao
      * @return Usuario
      */
-    public function setObservacao($observacao)
+    public function setObservacao($observacao): Usuario
     {
         $this->observacao = $observacao;
         return $this;
@@ -148,7 +148,7 @@ class Usuario
     /**
      * @return boolean
      */
-    public function isStatus()
+    public function isStatus(): bool
     {
         return $this->status;
     }
@@ -157,7 +157,7 @@ class Usuario
      * @param boolean $status
      * @return Usuario
      */
-    public function setStatus($status)
+    public function setStatus($status): Usuario
     {
         $this->status = $status;
         return $this;
@@ -166,7 +166,7 @@ class Usuario
     /**
      * @return \MRS\UserBundle\Entity\User
      */
-    public function getUserId()
+    public function getUserId(): \MRS\UserBundle\Entity\User
     {
         return $this->user_id;
     }
@@ -175,7 +175,7 @@ class Usuario
      * @param \MRS\UserBundle\Entity\User
      * @return Usuario
      */
-    public function setUserId(\MRS\UserBundle\Entity\User $user_id = null)
+    public function setUserId(\MRS\UserBundle\Entity\User $user_id = null): Usuario
     {
         $this->user_id = $user_id;
         return $this;
@@ -188,7 +188,7 @@ class Usuario
      * @param string $nomecompleto
      * @return Usuario
      */
-    public function setNomecompleto($nomecompleto)
+    public function setNomecompleto($nomecompleto): Usuario
     {
         $this->nomecompleto = $nomecompleto;
 
@@ -200,7 +200,7 @@ class Usuario
      *
      * @return string 
      */
-    public function getNomecompleto()
+    public function getNomecompleto(): string
     {
         return $this->nomecompleto;
     }
@@ -213,7 +213,7 @@ class Usuario
      * @param string $nome
      * @return Usuario
      */
-    public function setNome($nome)
+    public function setNome($nome): Usuario
     {
         $this->nome = $nome;
 
@@ -225,7 +225,7 @@ class Usuario
      *
      * @return string 
      */
-    public function getNome()
+    public function getNome(): string
     {
         return $this->nome;
     }
@@ -235,7 +235,7 @@ class Usuario
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -246,7 +246,7 @@ class Usuario
      * @param App\Entity\CentroMovimentacao $departamento
      * @return Usuario
      */
-    public function setDepartamento(CentroMovimentacao $departamento = null)
+    public function setDepartamento(CentroMovimentacao $departamento = null): Usuario
     {
         $this->departamento = $departamento;
 
@@ -258,7 +258,7 @@ class Usuario
      *
      * @return \MRS\InventarioBundle\Entity\CentroMovimentacao 
      */
-    public function getDepartamento()
+    public function getDepartamento(): \MRS\InventarioBundle\Entity\CentroMovimentacao
     {
         return $this->departamento;
     }

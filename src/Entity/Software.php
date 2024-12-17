@@ -106,7 +106,7 @@ class Software
      * @param string $descricao
      * @return Software
      */
-    public function setDescricao($descricao)
+    public function setDescricao($descricao): Software
     {
         $this->descricao = $descricao;
 
@@ -118,7 +118,7 @@ class Software
      *
      * @return string 
      */
-    public function getDescricao()
+    public function getDescricao(): string
     {
         return $this->descricao;
     }
@@ -129,7 +129,7 @@ class Software
      * @param string $numerolicensa
      * @return Software
      */
-    public function setNumerolicensa($numerolicensa)
+    public function setNumerolicensa($numerolicensa): Software
     {
         $this->numerolicensa = $numerolicensa;
 
@@ -141,7 +141,7 @@ class Software
      *
      * @return string
      */
-    public function getNumerolicensa()
+    public function getNumerolicensa(): string
     {
         return $this->numerolicensa;
     }
@@ -152,7 +152,7 @@ class Software
      * @param string $numeroreserva
      * @return Software
      */
-    public function setNumeroReserva($numeroreserva)
+    public function setNumeroReserva($numeroreserva): Software
     {
         $this->numeroreserva = $numeroreserva;
 
@@ -164,7 +164,7 @@ class Software
      *
      * @return string
      */
-    public function getNumeroReserva()
+    public function getNumeroReserva(): string
     {
         return $this->numeroreserva;
     }
@@ -175,7 +175,7 @@ class Software
      * @param string $versao
      * @return Software
      */
-    public function setVersao($versao)
+    public function setVersao($versao): Software
     {
         $this->versao = $versao;
 
@@ -187,7 +187,7 @@ class Software
      *
      * @return string 
      */
-    public function getVersao()
+    public function getVersao(): string
     {
         return $this->versao;
     }
@@ -198,7 +198,7 @@ class Software
      * @param string $serial
      * @return Software
      */
-    public function setSerial($serial)
+    public function setSerial($serial): Software
     {
         $this->serial = $serial;
 
@@ -210,7 +210,7 @@ class Software
      *
      * @return string 
      */
-    public function getSerial()
+    public function getSerial(): string
     {
         return $this->serial;
     }
@@ -220,7 +220,7 @@ class Software
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -231,7 +231,7 @@ class Software
      * @param App\Entity\Tiposoftware $tiposoftware
      * @return Software
      */
-    public function setTiposoftware(Tiposoftware $tiposoftware = null)
+    public function setTiposoftware(Tiposoftware $tiposoftware = null): Software
     {
         $this->tiposoftware = $tiposoftware;
 
@@ -243,7 +243,7 @@ class Software
      *
      * @return App\Entity\Tiposoftware 
      */
-    public function getTiposoftware()
+    public function getTiposoftware(): App\Entity\Tiposoftware
     {
         return $this->tiposoftware;
     }
@@ -260,7 +260,7 @@ class Software
      *
      * @return Software
      */
-    public function setFornecedor(FornecedorSoftware $fornecedor = null)
+    public function setFornecedor(FornecedorSoftware $fornecedor = null): Software
     {
         $this->fornecedor = $fornecedor;
 
@@ -272,7 +272,7 @@ class Software
      *
      * @return App\Entity\FornecedorSoftware
      */
-    public function getFornecedor()
+    public function getFornecedor(): App\Entity\FornecedorSoftware
     {
         return $this->fornecedor;
     }

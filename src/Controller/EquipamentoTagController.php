@@ -152,7 +152,7 @@ class EquipamentoTagController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(EquipamentoTag $equipamentoTag)
+    private function createDeleteForm(EquipamentoTag $equipamentoTag): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_equipamentotag_delete', array('id' => $equipamentoTag->getId())))

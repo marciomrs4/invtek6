@@ -42,7 +42,7 @@ class Marca
      * @param string $nome
      * @return Marca
      */
-    public function setNome($nome)
+    public function setNome($nome): Marca
     {
         $this->nome = $nome;
 
@@ -54,7 +54,7 @@ class Marca
      *
      * @return string 
      */
-    public function getNome()
+    public function getNome(): string
     {
         return $this->nome;
     }
@@ -64,7 +64,7 @@ class Marca
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }

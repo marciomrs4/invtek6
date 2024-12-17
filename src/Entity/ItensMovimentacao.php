@@ -72,7 +72,7 @@ class ItensMovimentacao
      * @param string $numeroChamado
      * @return ItensMovimentacao
      */
-    public function setNumeroChamado($numeroChamado)
+    public function setNumeroChamado($numeroChamado): ItensMovimentacao
     {
         $this->numeroChamado = $numeroChamado;
 
@@ -84,7 +84,7 @@ class ItensMovimentacao
      *
      * @return string 
      */
-    public function getNumeroChamado()
+    public function getNumeroChamado(): string
     {
         return $this->numeroChamado;
     }
@@ -94,7 +94,7 @@ class ItensMovimentacao
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -105,7 +105,7 @@ class ItensMovimentacao
      * @param App\Entity\Movimentacao $movimentacao
      * @return ItensMovimentacao
      */
-    public function setMovimentacao(Movimentacao $movimentacao = null)
+    public function setMovimentacao(Movimentacao $movimentacao = null): ItensMovimentacao
     {
         $this->movimentacao = $movimentacao;
 
@@ -117,7 +117,7 @@ class ItensMovimentacao
      *
      * @return App\Entity\Movimentacao 
      */
-    public function getMovimentacao()
+    public function getMovimentacao(): App\Entity\Movimentacao
     {
         return $this->movimentacao;
     }
@@ -128,7 +128,7 @@ class ItensMovimentacao
      * @param App\Entity\Equipamento $equipamento
      * @return ItensMovimentacao
      */
-    public function setEquipamento(Equipamento $equipamento = null)
+    public function setEquipamento(Equipamento $equipamento = null): ItensMovimentacao
     {
         $this->equipamento = $equipamento;
 
@@ -140,7 +140,7 @@ class ItensMovimentacao
      *
      * @return App\Entity\Equipamento 
      */
-    public function getEquipamento()
+    public function getEquipamento(): App\Entity\Equipamento
     {
         return $this->equipamento;
     }

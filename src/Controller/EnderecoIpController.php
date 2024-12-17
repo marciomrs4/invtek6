@@ -209,7 +209,7 @@ class EnderecoIpController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(EnderecoIp $enderecoIp)
+    private function createDeleteForm(EnderecoIp $enderecoIp): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_enderecoip_delete', array('id' => $enderecoIp->getId())))

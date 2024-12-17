@@ -149,7 +149,7 @@ class UsuarioController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Usuario $usuario)
+    private function createDeleteForm(Usuario $usuario): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_usuario_delete', array('id' => $usuario->getId())))

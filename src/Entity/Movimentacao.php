@@ -137,7 +137,7 @@ class Movimentacao
     /**
      * @return boolean
      */
-    public function getStatus()
+    public function getStatus(): bool
     {
         return $this->status;
     }
@@ -146,7 +146,7 @@ class Movimentacao
      * @param boolean $status
      * @return Movimentacao
      */
-    public function setStatus($status)
+    public function setStatus($status): Movimentacao
     {
         $this->status = $status;
         return $this;
@@ -158,7 +158,7 @@ class Movimentacao
      * @param \DateTime $datahora
      * @return Movimentacao
      */
-    public function setDatahora($datahora)
+    public function setDatahora($datahora): Movimentacao
     {
         $this->datahora = $datahora;
 
@@ -170,7 +170,7 @@ class Movimentacao
      *
      * @return \DateTime 
      */
-    public function getDatahora()
+    public function getDatahora(): \DateTime
     {
         return $this->datahora;
     }
@@ -180,7 +180,7 @@ class Movimentacao
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -191,7 +191,7 @@ class Movimentacao
      * @param App\Entity\Usuario $usuarioDestino
      * @return Movimentacao
      */
-    public function setUsuarioDestino(Usuario $usuarioDestino = null)
+    public function setUsuarioDestino(Usuario $usuarioDestino = null): Movimentacao
     {
         $this->usuarioDestino = $usuarioDestino;
 
@@ -203,7 +203,7 @@ class Movimentacao
      *
      * @return App\Entity\Usuario 
      */
-    public function getUsuarioDestino()
+    public function getUsuarioDestino(): App\Entity\Usuario
     {
         return $this->usuarioDestino;
     }
@@ -214,7 +214,7 @@ class Movimentacao
      * @param App\Entity\Usuario $usuarioOrigem
      * @return Movimentacao
      */
-    public function setUsuarioOrigem(Usuario $usuarioOrigem = null)
+    public function setUsuarioOrigem(Usuario $usuarioOrigem = null): Movimentacao
     {
         $this->usuarioOrigem = $usuarioOrigem;
 
@@ -226,7 +226,7 @@ class Movimentacao
      *
      * @return App\Entity\Usuario 
      */
-    public function getUsuarioOrigem()
+    public function getUsuarioOrigem(): App\Entity\Usuario
     {
         return $this->usuarioOrigem;
     }
@@ -237,7 +237,7 @@ class Movimentacao
      * @param App\Entity\Usuario $usuarioCriador
      * @return Movimentacao
      */
-    public function setUsuarioCriador(User $usuarioCriador = null)
+    public function setUsuarioCriador(User $usuarioCriador = null): Movimentacao
     {
         $this->usuarioCriador = $usuarioCriador;
 
@@ -249,7 +249,7 @@ class Movimentacao
      *
      * @return App\Entity\Usuario 
      */
-    public function getUsuarioCriador()
+    public function getUsuarioCriador(): App\Entity\Usuario
     {
         return $this->usuarioCriador;
     }
@@ -260,7 +260,7 @@ class Movimentacao
      * @param App\Entity\Motivomovimentacao $motivomovimentacao
      * @return Movimentacao
      */
-    public function setMotivomovimentacao(Motivomovimentacao $motivomovimentacao = null)
+    public function setMotivomovimentacao(Motivomovimentacao $motivomovimentacao = null): Movimentacao
     {
         $this->motivomovimentacao = $motivomovimentacao;
 
@@ -272,7 +272,7 @@ class Movimentacao
      *
      * @return App\Entity\Motivomovimentacao 
      */
-    public function getMotivomovimentacao()
+    public function getMotivomovimentacao(): App\Entity\Motivomovimentacao
     {
         return $this->motivomovimentacao;
     }
@@ -283,7 +283,7 @@ class Movimentacao
      * @param App\Entity\Tipomovimentacao $tipomovimentacao
      * @return Movimentacao
      */
-    public function setTipomovimentacao(Tipomovimentacao $tipomovimentacao = null)
+    public function setTipomovimentacao(Tipomovimentacao $tipomovimentacao = null): Movimentacao
     {
         $this->tipomovimentacao = $tipomovimentacao;
 
@@ -295,7 +295,7 @@ class Movimentacao
      *
      * @return App\Entity\Tipomovimentacao 
      */
-    public function getTipomovimentacao()
+    public function getTipomovimentacao(): App\Entity\Tipomovimentacao
     {
         return $this->tipomovimentacao;
     }

@@ -64,7 +64,7 @@ class EquipamentoHasComponente
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -75,7 +75,7 @@ class EquipamentoHasComponente
      * @param App\Entity\Componente $componente
      * @return EquipamentoHasComponente
      */
-    public function setComponente(Componente $componente = null)
+    public function setComponente(Componente $componente = null): EquipamentoHasComponente
     {
         $this->componente = $componente;
 
@@ -87,7 +87,7 @@ class EquipamentoHasComponente
      *
      * @return App\Entity\Componente 
      */
-    public function getComponente()
+    public function getComponente(): App\Entity\Componente
     {
         return $this->componente;
     }
@@ -98,7 +98,7 @@ class EquipamentoHasComponente
      * @param App\Entity\Equipamento $equipamento
      * @return EquipamentoHasComponente
      */
-    public function setEquipamento(Equipamento $equipamento = null)
+    public function setEquipamento(Equipamento $equipamento = null): EquipamentoHasComponente
     {
         $this->equipamento = $equipamento;
 
@@ -110,7 +110,7 @@ class EquipamentoHasComponente
      *
      * @return App\Entity\Equipamento 
      */
-    public function getEquipamento()
+    public function getEquipamento(): App\Entity\Equipamento
     {
         return $this->equipamento;
     }

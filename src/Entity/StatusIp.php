@@ -46,7 +46,7 @@ class StatusIp
      *
      * @return StatusIp
      */
-    public function setNome($nome)
+    public function setNome($nome): StatusIp
     {
         $this->nome = $nome;
 
@@ -58,7 +58,7 @@ class StatusIp
      *
      * @return string
      */
-    public function getNome()
+    public function getNome(): string
     {
         return $this->nome;
     }
@@ -68,7 +68,7 @@ class StatusIp
      *
      * @return integer
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }

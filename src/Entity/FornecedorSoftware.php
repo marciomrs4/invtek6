@@ -68,7 +68,7 @@ class FornecedorSoftware
      *
      * @return FornecedorSoftware
      */
-    public function setNome($nome)
+    public function setNome($nome): FornecedorSoftware
     {
         $this->nome = $nome;
 
@@ -80,7 +80,7 @@ class FornecedorSoftware
      *
      * @return string
      */
-    public function getNome()
+    public function getNome(): string
     {
         return $this->nome;
     }
@@ -92,7 +92,7 @@ class FornecedorSoftware
      *
      * @return FornecedorSoftware
      */
-    public function setDescricao($descricao)
+    public function setDescricao($descricao): FornecedorSoftware
     {
         $this->descricao = $descricao;
 
@@ -104,7 +104,7 @@ class FornecedorSoftware
      *
      * @return string
      */
-    public function getDescricao()
+    public function getDescricao(): string
     {
         return $this->descricao;
     }
@@ -116,7 +116,7 @@ class FornecedorSoftware
      *
      * @return FornecedorSoftware
      */
-    public function setStatus($status)
+    public function setStatus($status): FornecedorSoftware
     {
         $this->status = $status;
 
@@ -128,7 +128,7 @@ class FornecedorSoftware
      *
      * @return boolean
      */
-    public function getStatus()
+    public function getStatus(): bool
     {
         return $this->status;
     }
@@ -138,7 +138,7 @@ class FornecedorSoftware
      *
      * @return integer
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }

@@ -226,7 +226,7 @@ class Equipamento
      * @param string $nome
      * @return Equipamento
      */
-    public function setNome($nome)
+    public function setNome($nome): Equipamento
     {
         $this->nome = $nome;
 
@@ -239,7 +239,7 @@ class Equipamento
      *
      * @return string
      */
-    public function getNome()
+    public function getNome(): string
     {
         return $this->nome;
     }
@@ -248,7 +248,7 @@ class Equipamento
     /**
      * @return CentroMovimentacao
      */
-    public function getCompradoPara()
+    public function getCompradoPara(): CentroMovimentacao
     {
         return $this->compradoPara;
     }
@@ -257,7 +257,7 @@ class Equipamento
      * @param CentroMovimentacao $compradoPara
      * @return Equipamento
      */
-    public function setCompradoPara($compradoPara)
+    public function setCompradoPara($compradoPara): Equipamento
     {
         $this->compradoPara = $compradoPara;
         return $this;
@@ -269,7 +269,7 @@ class Equipamento
      * @param \DateTime $validade
      * @return Equipamento
      */
-    public function setValidade($validade)
+    public function setValidade($validade): Equipamento
     {
         $this->validade = $validade;
 
@@ -282,7 +282,7 @@ class Equipamento
      *
      * @return \DateTime
      */
-    public function getValidade()
+    public function getValidade(): \DateTime
     {
         return $this->validade;
     }
@@ -290,7 +290,7 @@ class Equipamento
     /**
      * @return \DateTime
      */
-    public function getDataCompra()
+    public function getDataCompra(): \DateTime
     {
         return $this->dataCompra;
     }
@@ -299,7 +299,7 @@ class Equipamento
      * @param \DateTime $dataCompra
      * @return Equipamento
      */
-    public function setDataCompra($dataCompra)
+    public function setDataCompra($dataCompra): Equipamento
     {
         $this->dataCompra = $dataCompra;
         return $this;
@@ -308,7 +308,7 @@ class Equipamento
     /**
      * @return string
      */
-    public function getValorCompra()
+    public function getValorCompra(): string
     {
         return $this->valorCompra;
     }
@@ -317,7 +317,7 @@ class Equipamento
      * @param string $valorCompra
      * @return Equipamento
      */
-    public function setValorCompra($valorCompra)
+    public function setValorCompra($valorCompra): Equipamento
     {
         $this->valorCompra = $valorCompra;
         return $this;
@@ -330,7 +330,7 @@ class Equipamento
      * @param string $numeroserie
      * @return Equipamento
      */
-    public function setNumeroserie($numeroserie)
+    public function setNumeroserie($numeroserie): Equipamento
     {
         $this->numeroserie = $numeroserie;
 
@@ -342,7 +342,7 @@ class Equipamento
      *
      * @return string
      */
-    public function getNumeroserie()
+    public function getNumeroserie(): string
     {
         return $this->numeroserie;
     }
@@ -353,7 +353,7 @@ class Equipamento
      * @param boolean $status
      * @return Equipamento
      */
-    public function setStatus($status)
+    public function setStatus($status): Equipamento
     {
         $this->status = $status;
 
@@ -365,7 +365,7 @@ class Equipamento
      *
      * @return boolean
      */
-    public function getStatus()
+    public function getStatus(): bool
     {
         return $this->status;
     }
@@ -376,7 +376,7 @@ class Equipamento
      * @param string $patrimonio
      * @return Equipamento
      */
-    public function setPatrimonio($patrimonio)
+    public function setPatrimonio($patrimonio): Equipamento
     {
         $this->patrimonio = $patrimonio;
 
@@ -388,7 +388,7 @@ class Equipamento
      *
      * @return string
      */
-    public function getPatrimonio()
+    public function getPatrimonio(): string
     {
         return $this->patrimonio;
     }
@@ -399,7 +399,7 @@ class Equipamento
      * @param string $descricao
      * @return Equipamento
      */
-    public function setDescricao($descricao)
+    public function setDescricao($descricao): Equipamento
     {
         $this->descricao = $descricao;
 
@@ -411,7 +411,7 @@ class Equipamento
      *
      * @return string
      */
-    public function getDescricao()
+    public function getDescricao(): string
     {
         return $this->descricao;
     }
@@ -422,7 +422,7 @@ class Equipamento
      * @param string $observacao
      * @return Equipamento
      */
-    public function setObservacao($observacao)
+    public function setObservacao($observacao): Equipamento
     {
         $this->observacao = $observacao;
 
@@ -434,7 +434,7 @@ class Equipamento
      *
      * @return string
      */
-    public function getObservacao()
+    public function getObservacao(): string
     {
         return $this->observacao;
     }
@@ -444,7 +444,7 @@ class Equipamento
      *
      * @return integer
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -455,7 +455,7 @@ class Equipamento
      * @param App\Entity\CentroMovimentacao $centroMovimentacao
      * @return Equipamento
      */
-    public function setCentroMovimentacao(CentroMovimentacao $centroMovimentacao = null)
+    public function setCentroMovimentacao(CentroMovimentacao $centroMovimentacao = null): Equipamento
     {
         $this->centroMovimentacao = $centroMovimentacao;
 
@@ -467,7 +467,7 @@ class Equipamento
      *
      * @return App\Entity\CentroMovimentacao
      */
-    public function getCentroMovimentacao()
+    public function getCentroMovimentacao(): App\Entity\CentroMovimentacao
     {
         return $this->centroMovimentacao;
     }
@@ -478,7 +478,7 @@ class Equipamento
      * @param App\Entity\Marca $marca
      * @return Equipamento
      */
-    public function setMarca(Marca $marca = null)
+    public function setMarca(Marca $marca = null): Equipamento
     {
         $this->marca = $marca;
 
@@ -490,7 +490,7 @@ class Equipamento
      *
      * @return App\Entity\Marca
      */
-    public function getMarca()
+    public function getMarca(): App\Entity\Marca
     {
         return $this->marca;
     }
@@ -501,7 +501,7 @@ class Equipamento
      * @param App\Entity\Fornecedor $fornecedor
      * @return Equipamento
      */
-    public function setFornecedor(Fornecedor $fornecedor = null)
+    public function setFornecedor(Fornecedor $fornecedor = null): Equipamento
     {
         $this->fornecedor = $fornecedor;
 
@@ -513,7 +513,7 @@ class Equipamento
      *
      * @return App\Entity\Fornecedor
      */
-    public function getFornecedor()
+    public function getFornecedor(): App\Entity\Fornecedor
     {
         return $this->fornecedor;
     }
@@ -524,7 +524,7 @@ class Equipamento
      * @param App\Entity\Tipoequipamento $tipoequipamento
      * @return Equipamento
      */
-    public function setTipoequipamento(Tipoequipamento $tipoequipamento = null)
+    public function setTipoequipamento(Tipoequipamento $tipoequipamento = null): Equipamento
     {
         $this->tipoequipamento = $tipoequipamento;
 
@@ -536,7 +536,7 @@ class Equipamento
      *
      * @return App\Entity\Tipoequipamento
      */
-    public function getTipoequipamento()
+    public function getTipoequipamento(): App\Entity\Tipoequipamento
     {
         return $this->tipoequipamento;
     }

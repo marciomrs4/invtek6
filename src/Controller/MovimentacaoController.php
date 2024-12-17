@@ -218,7 +218,7 @@ class MovimentacaoController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Movimentacao $movimentacao)
+    private function createDeleteForm(Movimentacao $movimentacao): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('movimentacao_delete', array('id' => $movimentacao->getId())))

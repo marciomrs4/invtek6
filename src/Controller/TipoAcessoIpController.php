@@ -141,7 +141,7 @@ class TipoAcessoIpController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(TipoAcessoIp $tipoAcessoIp)
+    private function createDeleteForm(TipoAcessoIp $tipoAcessoIp): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_tipoacessoip_delete', array('id' => $tipoAcessoIp->getId())))

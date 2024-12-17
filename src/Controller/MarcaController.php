@@ -163,7 +163,7 @@ class MarcaController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Marca $marca)
+    private function createDeleteForm(Marca $marca): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_marca_delete', array('id' => $marca->getId())))

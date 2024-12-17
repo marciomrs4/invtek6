@@ -44,7 +44,7 @@ class Unidade
      * @param string $nome
      * @return Unidade
      */
-    public function setNome($nome)
+    public function setNome($nome): Unidade
     {
         $this->nome = $nome;
 
@@ -56,7 +56,7 @@ class Unidade
      *
      * @return string 
      */
-    public function getNome()
+    public function getNome(): string
     {
         return $this->nome;
     }
@@ -66,7 +66,7 @@ class Unidade
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }

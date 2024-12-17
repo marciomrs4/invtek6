@@ -69,7 +69,7 @@ class SoftwareTag
      * @param string $descricao
      * @return SoftwareTag
      */
-    public function setDescricao($descricao)
+    public function setDescricao($descricao): SoftwareTag
     {
         $this->descricao = $descricao;
 
@@ -81,7 +81,7 @@ class SoftwareTag
      *
      * @return string 
      */
-    public function getDescricao()
+    public function getDescricao(): string
     {
         return $this->descricao;
     }
@@ -92,7 +92,7 @@ class SoftwareTag
      * @param string $nome
      * @return SoftwareTag
      */
-    public function setNome($nome)
+    public function setNome($nome): SoftwareTag
     {
         $this->nome = $nome;
 
@@ -104,7 +104,7 @@ class SoftwareTag
      *
      * @return string 
      */
-    public function getNome()
+    public function getNome(): string
     {
         return $this->nome;
     }
@@ -114,7 +114,7 @@ class SoftwareTag
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -125,7 +125,7 @@ class SoftwareTag
      * @param App\Entity\Software $software
      * @return SoftwareTag
      */
-    public function setSoftware(Software $software = null)
+    public function setSoftware(Software $software = null): SoftwareTag
     {
         $this->software = $software;
 
@@ -137,7 +137,7 @@ class SoftwareTag
      *
      * @return App\Entity\Software 
      */
-    public function getSoftware()
+    public function getSoftware(): App\Entity\Software
     {
         return $this->software;
     }

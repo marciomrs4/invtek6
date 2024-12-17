@@ -137,7 +137,7 @@ class TipoacompanhamentoController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Tipoacompanhamento $tipoacompanhamento)
+    private function createDeleteForm(Tipoacompanhamento $tipoacompanhamento): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_tipoacompanhamento_delete', array('id' => $tipoacompanhamento->getId())))

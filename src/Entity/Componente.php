@@ -56,7 +56,7 @@ class Componente
      * @param string $descricao
      * @return Componente
      */
-    public function setDescricao($descricao)
+    public function setDescricao($descricao): Componente
     {
         $this->descricao = $descricao;
 
@@ -68,7 +68,7 @@ class Componente
      *
      * @return string 
      */
-    public function getDescricao()
+    public function getDescricao(): string
     {
         return $this->descricao;
     }
@@ -78,7 +78,7 @@ class Componente
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -89,7 +89,7 @@ class Componente
      * @param App\Tipocomponente $tipocomponente
      * @return Componente
      */
-    public function setTipocomponente(Tipocomponente $tipocomponente = null)
+    public function setTipocomponente(Tipocomponente $tipocomponente = null): Componente
     {
         $this->tipocomponente = $tipocomponente;
 
@@ -101,7 +101,7 @@ class Componente
      *
      * @return App\Entity\Tipocomponente 
      */
-    public function getTipocomponente()
+    public function getTipocomponente(): App\Entity\Tipocomponente
     {
         return $this->tipocomponente;
     }

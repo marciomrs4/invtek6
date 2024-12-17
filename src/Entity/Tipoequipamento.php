@@ -51,7 +51,7 @@ class Tipoequipamento
     /**
      * @return string
      */
-    public function getIcone()
+    public function getIcone(): string
     {
         return $this->icone;
     }
@@ -60,7 +60,7 @@ class Tipoequipamento
      * @param string $icone
      * @return Tipoequipamento
      */
-    public function setIcone($icone)
+    public function setIcone($icone): Tipoequipamento
     {
         $this->icone = $icone;
         return $this;
@@ -74,7 +74,7 @@ class Tipoequipamento
      * @param string $descricao
      * @return Tipoequipamento
      */
-    public function setDescricao($descricao)
+    public function setDescricao($descricao): Tipoequipamento
     {
         $this->descricao = $descricao;
 
@@ -86,7 +86,7 @@ class Tipoequipamento
      *
      * @return string 
      */
-    public function getDescricao()
+    public function getDescricao(): string
     {
         return $this->descricao;
     }
@@ -96,7 +96,7 @@ class Tipoequipamento
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }

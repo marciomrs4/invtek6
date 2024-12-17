@@ -138,7 +138,7 @@ class MotivomovimentacaoController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Motivomovimentacao $motivomovimentacao)
+    private function createDeleteForm(Motivomovimentacao $motivomovimentacao): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_motivomovimentacao_delete', array('id' => $motivomovimentacao->getId())))

@@ -59,18 +59,20 @@ class EquipamentoRepository extends EntityRepository
 
         $stmt = $this->prepareStmt($query);
 
-        $result = $stmt->executeQuery(array(
-            "{$this->emptyValue($dataForm['tipoequipamento'])}",
-            "{$this->emptyValue($dataForm['fornecedor'])}",
-            "{$this->emptyValue($dataForm['marca'])}",
-            "%{$this->emptyValue($dataForm['patrimonio'])}%",
-            "{$dataForm['dataCompraA']}",
-            "{$dataForm['dataCompraB']}",
-            "%{$this->emptyValue($dataForm['numeroserie'])}%",
-            "{$this->emptyValue($dataForm['status'])}",
-            "{$this->emptyValue($dataForm['centroMovimentacao'])}",
-        ));
 
+            $stmt->bindValue(1,$this->emptyValue($dataForm['tipoequipamento']));
+            $stmt->bindValue(2,$this->emptyValue($dataForm['fornecedor']));
+            $stmt->bindValue(3,$this->emptyValue($dataForm['marca']));
+            $stmt->bindValue(4,"%{$this->emptyValue($dataForm['patrimonio'])}%");
+            $stmt->bindValue(5,$dataForm['dataCompraA']);
+            $stmt->bindValue(6,$dataForm['dataCompraB']);
+            $stmt->bindValue(7,"%{$this->emptyValue($dataForm['numeroserie'])}%");
+            $stmt->bindValue(8,"{$this->emptyValue($dataForm['status'])}");
+            $stmt->bindValue(9,"{$this->emptyValue($dataForm['centroMovimentacao'])}");
+       
+
+        $result = $stmt->executeQuery();
+        
         return $result->fetchAllAssociative();
 
     }

@@ -104,7 +104,7 @@ class LicencaSoftware
      *
      * @return LicencaSoftware
      */
-    public function setNotaFiscal($notaFiscal)
+    public function setNotaFiscal($notaFiscal): LicencaSoftware
     {
         $this->nota_fiscal = $notaFiscal;
 
@@ -116,7 +116,7 @@ class LicencaSoftware
      *
      * @return string
      */
-    public function getNotaFiscal()
+    public function getNotaFiscal(): string
     {
         return $this->nota_fiscal;
     }
@@ -128,7 +128,7 @@ class LicencaSoftware
      *
      * @return LicencaSoftware
      */
-    public function setDataEmissao($dataEmissao)
+    public function setDataEmissao($dataEmissao): LicencaSoftware
     {
         $this->data_emissao = $dataEmissao;
 
@@ -140,7 +140,7 @@ class LicencaSoftware
      *
      * @return \DateTime
      */
-    public function getDataEmissao()
+    public function getDataEmissao(): \DateTime
     {
         return $this->data_emissao;
     }
@@ -152,7 +152,7 @@ class LicencaSoftware
      *
      * @return LicencaSoftware
      */
-    public function setValorUnitario($valorUnitario)
+    public function setValorUnitario($valorUnitario): LicencaSoftware
     {
         $this->valor_unitario = $valorUnitario;
 
@@ -164,7 +164,7 @@ class LicencaSoftware
      *
      * @return string
      */
-    public function getValorUnitario()
+    public function getValorUnitario(): string
     {
         return $this->valor_unitario;
     }
@@ -176,7 +176,7 @@ class LicencaSoftware
      *
      * @return LicencaSoftware
      */
-    public function setQuantidadeTotal($quantidadeTotal)
+    public function setQuantidadeTotal($quantidadeTotal): LicencaSoftware
     {
         $this->quantidade_total = $quantidadeTotal;
 
@@ -188,7 +188,7 @@ class LicencaSoftware
      *
      * @return integer
      */
-    public function getQuantidadeTotal()
+    public function getQuantidadeTotal(): int
     {
         return $this->quantidade_total;
     }
@@ -200,7 +200,7 @@ class LicencaSoftware
      *
      * @return LicencaSoftware
      */
-    public function setAnotacoes($anotacoes)
+    public function setAnotacoes($anotacoes): LicencaSoftware
     {
         $this->anotacoes = $anotacoes;
 
@@ -212,7 +212,7 @@ class LicencaSoftware
      *
      * @return string
      */
-    public function getAnotacoes()
+    public function getAnotacoes(): string
     {
         return $this->anotacoes;
     }
@@ -222,7 +222,7 @@ class LicencaSoftware
      *
      * @return integer
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -234,7 +234,7 @@ class LicencaSoftware
      *
      * @return LicencaSoftware
      */
-    public function setSoftware(Software $software = null)
+    public function setSoftware(Software $software = null): LicencaSoftware
     {
         $this->software = $software;
 
@@ -246,7 +246,7 @@ class LicencaSoftware
      *
      * @return App\Entity\Software
      */
-    public function getSoftware()
+    public function getSoftware(): App\Entity\Software
     {
         return $this->software;
     }

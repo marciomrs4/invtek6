@@ -62,7 +62,7 @@ class EquipamentoHasSoftware
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -73,7 +73,7 @@ class EquipamentoHasSoftware
      * @param App\Entity\Software $software
      * @return EquipamentoHasSoftware
      */
-    public function setSoftware(Software $software = null)
+    public function setSoftware(Software $software = null): EquipamentoHasSoftware
     {
         $this->software = $software;
 
@@ -85,7 +85,7 @@ class EquipamentoHasSoftware
      *
      * @return App\Entity\Software 
      */
-    public function getSoftware()
+    public function getSoftware(): App\Entity\Software
     {
         return $this->software;
     }
@@ -96,7 +96,7 @@ class EquipamentoHasSoftware
      * @param App\Entity\Equipamento $equipamento
      * @return EquipamentoHasSoftware
      */
-    public function setEquipamento(Equipamento $equipamento = null)
+    public function setEquipamento(Equipamento $equipamento = null): EquipamentoHasSoftware
     {
         $this->equipamento = $equipamento;
 
@@ -108,7 +108,7 @@ class EquipamentoHasSoftware
      *
      * @return App\Entity\Equipamento 
      */
-    public function getEquipamento()
+    public function getEquipamento(): App\Entity\Equipamento
     {
         return $this->equipamento;
     }

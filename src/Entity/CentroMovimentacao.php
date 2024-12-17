@@ -63,7 +63,7 @@ class CentroMovimentacao
      * @param string $nome
      * @return CentroMovimentacao
      */
-    public function setNome($nome)
+    public function setNome($nome): CentroMovimentacao
     {
         $this->nome = $nome;
 
@@ -75,7 +75,7 @@ class CentroMovimentacao
      *
      * @return string 
      */
-    public function getNome()
+    public function getNome(): string
     {
         return $this->nome;
     }
@@ -85,7 +85,7 @@ class CentroMovimentacao
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -96,7 +96,7 @@ class CentroMovimentacao
      * @param \MRS\InventarioBundle\Entity\Unidade $unidade
      * @return CentroMovimentacao
      */
-    public function setUnidade(Unidade $unidade = null)
+    public function setUnidade(Unidade $unidade = null): CentroMovimentacao
     {
         $this->unidade = $unidade;
 
@@ -108,7 +108,7 @@ class CentroMovimentacao
      *
      * @return \MRS\InventarioBundle\Entity\Unidade 
      */
-    public function getUnidade()
+    public function getUnidade(): \MRS\InventarioBundle\Entity\Unidade
     {
         return $this->unidade;
     }
@@ -125,7 +125,7 @@ class CentroMovimentacao
      *
      * @return CentroMovimentacao
      */
-    public function setTempoPrevencao($tempoPrevencao)
+    public function setTempoPrevencao($tempoPrevencao): CentroMovimentacao
     {
         $this->tempoPrevencao = $tempoPrevencao;
 
@@ -137,7 +137,7 @@ class CentroMovimentacao
      *
      * @return integer
      */
-    public function getTempoPrevencao()
+    public function getTempoPrevencao(): int
     {
         return $this->tempoPrevencao;
     }

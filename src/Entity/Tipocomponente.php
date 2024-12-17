@@ -43,7 +43,7 @@ class Tipocomponente
      * @param string $descricao
      * @return Tipocomponente
      */
-    public function setDescricao($descricao)
+    public function setDescricao($descricao): Tipocomponente
     {
         $this->descricao = $descricao;
 
@@ -55,7 +55,7 @@ class Tipocomponente
      *
      * @return string 
      */
-    public function getDescricao()
+    public function getDescricao(): string
     {
         return $this->descricao;
     }
@@ -65,7 +65,7 @@ class Tipocomponente
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }

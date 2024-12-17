@@ -105,7 +105,7 @@ class CustoEquipamento
      *
      * @return CustoEquipamento
      */
-    public function setValor($valor)
+    public function setValor($valor): CustoEquipamento
     {
         $this->valor = $valor;
 
@@ -117,7 +117,7 @@ class CustoEquipamento
      *
      * @return string
      */
-    public function getValor()
+    public function getValor(): string
     {
         return $this->valor;
     }
@@ -129,7 +129,7 @@ class CustoEquipamento
      *
      * @return CustoEquipamento
      */
-    public function setDescricao($descricao)
+    public function setDescricao($descricao): CustoEquipamento
     {
         $this->descricao = $descricao;
 
@@ -141,7 +141,7 @@ class CustoEquipamento
      *
      * @return string
      */
-    public function getDescricao()
+    public function getDescricao(): string
     {
         return $this->descricao;
     }
@@ -151,7 +151,7 @@ class CustoEquipamento
      *
      * @return integer
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -163,7 +163,7 @@ class CustoEquipamento
      *
      * @return CustoEquipamento
      */
-    public function setEquipamento(Equipamento $equipamento = null)
+    public function setEquipamento(Equipamento $equipamento = null): CustoEquipamento
     {
         $this->equipamento = $equipamento;
 
@@ -175,7 +175,7 @@ class CustoEquipamento
      *
      * @return App\Entity\Equipamento
      */
-    public function getEquipamento()
+    public function getEquipamento(): App\Entity\Equipamento
     {
         return $this->equipamento;
     }
@@ -187,7 +187,7 @@ class CustoEquipamento
      *
      * @return CustoEquipamento
      */
-    public function setUsuario(User $usuario = null)
+    public function setUsuario(User $usuario = null): CustoEquipamento
     {
         $this->usuario = $usuario;
 
@@ -199,7 +199,7 @@ class CustoEquipamento
      *
      * @return App\Entity\Usuario
      */
-    public function getUsuario()
+    public function getUsuario(): App\Entity\Usuario
     {
         return $this->usuario;
     }
@@ -211,7 +211,7 @@ class CustoEquipamento
      *
      * @return CustoEquipamento
      */
-    public function setDataCriacao($dataCriacao)
+    public function setDataCriacao($dataCriacao): CustoEquipamento
     {
         $this->data_criacao = $dataCriacao;
 
@@ -223,7 +223,7 @@ class CustoEquipamento
      *
      * @return \DateTime
      */
-    public function getDataCriacao()
+    public function getDataCriacao(): \DateTime
     {
         return $this->data_criacao;
     }
@@ -235,7 +235,7 @@ class CustoEquipamento
      *
      * @return CustoEquipamento
      */
-    public function setAcompanhamento(Acompanhamento $acompanhamento = null)
+    public function setAcompanhamento(Acompanhamento $acompanhamento = null): CustoEquipamento
     {
         $this->acompanhamento = $acompanhamento;
 
@@ -247,7 +247,7 @@ class CustoEquipamento
      *
      * @return App\Entity\Acompanhamento
      */
-    public function getAcompanhamento()
+    public function getAcompanhamento(): App\Entity\Acompanhamento
     {
         return $this->acompanhamento;
     }

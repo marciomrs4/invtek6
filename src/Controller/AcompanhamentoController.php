@@ -156,7 +156,7 @@ class AcompanhamentoController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Acompanhamento $acompanhamento)
+    private function createDeleteForm(Acompanhamento $acompanhamento): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_acompanhamento_delete', array('id' => $acompanhamento->getId())))

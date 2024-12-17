@@ -147,7 +147,7 @@ class SoftwareTagController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(SoftwareTag $softwareTag)
+    private function createDeleteForm(SoftwareTag $softwareTag): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_softwaretag_delete', array('id' => $softwareTag->getId())))

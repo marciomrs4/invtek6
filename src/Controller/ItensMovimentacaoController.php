@@ -238,7 +238,7 @@ class ItensMovimentacaoController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(ItensMovimentacao $itensMovimentacao)
+    private function createDeleteForm(ItensMovimentacao $itensMovimentacao): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_itensmovimentacao_delete', array('id' => $itensMovimentacao->getId())))

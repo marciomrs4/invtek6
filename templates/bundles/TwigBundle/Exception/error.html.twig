@@ -1,1 +1,49 @@
-DEU ERRO AQUI MANO
+{% extends "base/error_base.html.twig" %}
+
+{% block body %}
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+                &ThinSpace;
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-3 col-md-4 col-xs-1">
+                {# Lado esquerdo#}
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-xs-10">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="panel-title">
+                            Erro: Falha no sistema
+                        </h3>
+                    </div>
+                    <div class="card-status-top bg-purple"></div>
+                    <div class="card-body">
+                        Entre em contato com Suporte e informe esta url: {{ app.request.uri }}
+                    </div>
+                    <div class="card-footer">
+                        Voltar para aplicação: 
+                        <a href="{{ path('home') }}" class="btn btn-blue">
+                            <i class="ti ti-home"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-4 col-xs-1">
+                {# lado direito #}
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

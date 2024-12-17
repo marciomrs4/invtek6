@@ -43,7 +43,7 @@ class Fornecedor
      * @param string $nome
      * @return Fornecedor
      */
-    public function setNome($nome)
+    public function setNome($nome): Fornecedor
     {
         $this->nome = $nome;
 
@@ -55,7 +55,7 @@ class Fornecedor
      *
      * @return string 
      */
-    public function getNome()
+    public function getNome(): string
     {
         return $this->nome;
     }
@@ -65,7 +65,7 @@ class Fornecedor
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }

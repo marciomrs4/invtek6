@@ -138,7 +138,7 @@ class TipocomponenteController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Tipocomponente $tipocomponente)
+    private function createDeleteForm(Tipocomponente $tipocomponente): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_tipocomponente_delete', array('id' => $tipocomponente->getId())))

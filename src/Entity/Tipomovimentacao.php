@@ -43,7 +43,7 @@ class Tipomovimentacao
      * @param string $nome
      * @return Tipomovimentacao
      */
-    public function setNome($nome)
+    public function setNome($nome): Tipomovimentacao
     {
         $this->nome = $nome;
 
@@ -55,7 +55,7 @@ class Tipomovimentacao
      *
      * @return string 
      */
-    public function getNome()
+    public function getNome(): string
     {
         return $this->nome;
     }
@@ -65,7 +65,7 @@ class Tipomovimentacao
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }

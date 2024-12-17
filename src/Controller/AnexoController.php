@@ -155,7 +155,7 @@ class AnexoController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Anexo $anexo)
+    private function createDeleteForm(Anexo $anexo): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_anexoequipamento_delete', array('id' => $anexo->getId())))

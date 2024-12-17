@@ -122,7 +122,7 @@ class EnderecoIp
      *
      * @return EnderecoIp
      */
-    public function setEnderecoIp($enderecoIp)
+    public function setEnderecoIp($enderecoIp): EnderecoIp
     {
         $this->enderecoIp = $enderecoIp;
 
@@ -135,7 +135,7 @@ class EnderecoIp
      *
      * @return string
      */
-    public function getEnderecoIp()
+    public function getEnderecoIp(): string
     {
         return $this->enderecoIp;
     }
@@ -147,7 +147,7 @@ class EnderecoIp
      *
      * @return EnderecoIp
      */
-    public function setNome($nome)
+    public function setNome($nome): EnderecoIp
     {
         $this->nome = strtoupper($nome);
 
@@ -159,7 +159,7 @@ class EnderecoIp
      *
      * @return string
      */
-    public function getNome()
+    public function getNome(): string
     {
         return strtoupper($this->nome);
     }
@@ -171,7 +171,7 @@ class EnderecoIp
      *
      * @return EnderecoIp
      */
-    public function setObservacao($observacao)
+    public function setObservacao($observacao): EnderecoIp
     {
         $this->observacao = $observacao;
 
@@ -183,7 +183,7 @@ class EnderecoIp
      *
      * @return string
      */
-    public function getObservacao()
+    public function getObservacao(): string
     {
         return $this->observacao;
     }
@@ -193,7 +193,7 @@ class EnderecoIp
      *
      * @return integer
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -205,7 +205,7 @@ class EnderecoIp
      *
      * @return EnderecoIp
      */
-    public function setTipoAcessoIp(TipoAcessoIp $tipoAcessoIp)
+    public function setTipoAcessoIp(TipoAcessoIp $tipoAcessoIp): EnderecoIp
     {
         $this->tipoAcessoIp = $tipoAcessoIp;
 
@@ -217,7 +217,7 @@ class EnderecoIp
      *
      * @return App\Entity\TipoAcessoIp
      */
-    public function getTipoAcessoIp()
+    public function getTipoAcessoIp(): App\Entity\TipoAcessoIp
     {
         return $this->tipoAcessoIp;
     }
@@ -229,7 +229,7 @@ class EnderecoIp
      *
      * @return EnderecoIp
      */
-    public function setStatus(StatusIp $status)
+    public function setStatus(StatusIp $status): EnderecoIp
     {
         $this->status = $status;
 
@@ -241,7 +241,7 @@ class EnderecoIp
      *
      * @return App\Entity\StatusIp
      */
-    public function getStatus()
+    public function getStatus(): App\Entity\StatusIp
     {
         return $this->status;
     }
@@ -253,7 +253,7 @@ class EnderecoIp
      *
      * @return EnderecoIp
      */
-    public function setUnidade(Unidade $unidade = null)
+    public function setUnidade(Unidade $unidade = null): EnderecoIp
     {
         $this->unidade = $unidade;
 
@@ -265,7 +265,7 @@ class EnderecoIp
      *
      * @return App\Entity\Unidade
      */
-    public function getUnidade()
+    public function getUnidade(): App\Entity\Unidade
     {
         return $this->unidade;
     }
@@ -273,7 +273,7 @@ class EnderecoIp
     /**
      * @return boolean
      */
-    public function isDoPing()
+    public function isDoPing(): bool
     {
         return $this->doPing;
     }
@@ -282,7 +282,7 @@ class EnderecoIp
      * @param boolean $doPing
      * @return EnderecoIp
      */
-    public function setDoPing($doPing)
+    public function setDoPing($doPing): EnderecoIp
     {
         $this->doPing = $doPing;
         return $this;

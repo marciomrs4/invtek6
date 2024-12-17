@@ -135,7 +135,7 @@ class ComponenteController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Componente $componente)
+    private function createDeleteForm(Componente $componente): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_componente_delete', array('id' => $componente->getId())))

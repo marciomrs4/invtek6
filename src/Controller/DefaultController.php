@@ -16,7 +16,7 @@ class DefaultController extends AbstractController
      *
      */
     #[Route('/', name:'index', methods:['GET'])]
-    public function indexAction()
+    public function indexAction(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->redirectToRoute('home');
     }
@@ -27,7 +27,7 @@ class DefaultController extends AbstractController
      *
      */
     #[Route("/home", name:"home", methods:['GET'])]
-    public function homeAction()
+    public function homeAction(): \Symfony\Component\HttpFoundation\Response
     {
 
         //return $this->render('template/home.html.twig');

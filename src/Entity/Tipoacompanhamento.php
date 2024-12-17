@@ -44,7 +44,7 @@ class Tipoacompanhamento
      * @param string $nome
      * @return Tipoacompanhamento
      */
-    public function setNome($nome)
+    public function setNome($nome): Tipoacompanhamento
     {
         $this->nome = $nome;
 
@@ -56,7 +56,7 @@ class Tipoacompanhamento
      *
      * @return string 
      */
-    public function getNome()
+    public function getNome(): string
     {
         return $this->nome;
     }
@@ -66,7 +66,7 @@ class Tipoacompanhamento
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }

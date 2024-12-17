@@ -177,7 +177,7 @@ class CentroMovimentacaoController extends AbstractController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(CentroMovimentacao $centroMovimentacao)
+    private function createDeleteForm(CentroMovimentacao $centroMovimentacao): \Symfony\Component\Form\Form
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('cadastro_centromovimentacao_delete', array('id' => $centroMovimentacao->getId())))

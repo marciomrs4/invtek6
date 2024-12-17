@@ -83,7 +83,7 @@ class Acompanhamento
      * @param string $descricao
      * @return Acompanhamento
      */
-    public function setDescricao($descricao)
+    public function setDescricao($descricao): Acompanhamento
     {
         $this->descricao = $descricao;
 
@@ -95,7 +95,7 @@ class Acompanhamento
      *
      * @return string 
      */
-    public function getDescricao()
+    public function getDescricao(): string
     {
         return $this->descricao;
     }
@@ -106,7 +106,7 @@ class Acompanhamento
      * @param \DateTime $datahora
      * @return Acompanhamento
      */
-    public function setDatahora($datahora)
+    public function setDatahora($datahora): Acompanhamento
     {
         $this->datahora = $datahora;
 
@@ -118,7 +118,7 @@ class Acompanhamento
      *
      * @return \DateTime 
      */
-    public function getDatahora()
+    public function getDatahora(): \DateTime
     {
         return $this->datahora;
     }
@@ -128,7 +128,7 @@ class Acompanhamento
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -139,7 +139,7 @@ class Acompanhamento
      * @param App\Entity\Tipoacompanhamento $tipoacompanhamento
      * @return Acompanhamento
      */
-    public function setTipoacompanhamento(Tipoacompanhamento $tipoacompanhamento = null)
+    public function setTipoacompanhamento(Tipoacompanhamento $tipoacompanhamento = null): Acompanhamento
     {
         $this->tipoacompanhamento = $tipoacompanhamento;
 
@@ -151,7 +151,7 @@ class Acompanhamento
      *
      * @return App\Entity\Tipoacompanhamento 
      */
-    public function getTipoacompanhamento()
+    public function getTipoacompanhamento(): App\Entity\Tipoacompanhamento
     {
         return $this->tipoacompanhamento;
     }
@@ -162,7 +162,7 @@ class Acompanhamento
      * @param Equipamento $equipamento
      * @return Acompanhamento
      */
-    public function setEquipamento(Equipamento $equipamento = null)
+    public function setEquipamento(Equipamento $equipamento = null): Acompanhamento
     {
         $this->equipamento = $equipamento;
 
@@ -174,7 +174,7 @@ class Acompanhamento
      *
      * @return App\Entity\Equipamento 
      */
-    public function getEquipamento()
+    public function getEquipamento(): App\Entity\Equipamento
     {
         return $this->equipamento;
     }

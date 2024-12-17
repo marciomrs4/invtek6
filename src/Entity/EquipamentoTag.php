@@ -69,7 +69,7 @@ class EquipamentoTag
      * @param string $descricao
      * @return EquipamentoTag
      */
-    public function setDescricao($descricao)
+    public function setDescricao($descricao): EquipamentoTag
     {
         $this->descricao = $descricao;
 
@@ -81,7 +81,7 @@ class EquipamentoTag
      *
      * @return string 
      */
-    public function getDescricao()
+    public function getDescricao(): string
     {
         return $this->descricao;
     }
@@ -92,7 +92,7 @@ class EquipamentoTag
      * @param string $nome
      * @return EquipamentoTag
      */
-    public function setNome($nome)
+    public function setNome($nome): EquipamentoTag
     {
         $this->nome = $nome;
 
@@ -104,7 +104,7 @@ class EquipamentoTag
      *
      * @return string 
      */
-    public function getNome()
+    public function getNome(): string
     {
         return $this->nome;
     }
@@ -114,7 +114,7 @@ class EquipamentoTag
      *
      * @return integer 
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -125,7 +125,7 @@ class EquipamentoTag
      * @param App\Entity\Equipamento $equipamento
      * @return EquipamentoTag
      */
-    public function setEquipamento(Equipamento $equipamento = null)
+    public function setEquipamento(Equipamento $equipamento = null): EquipamentoTag
     {
         $this->equipamento = $equipamento;
 
@@ -137,7 +137,7 @@ class EquipamentoTag
      *
      * @return App\Entity\Equipamento 
      */
-    public function getEquipamento()
+    public function getEquipamento(): App\Entity\Equipamento
     {
         return $this->equipamento;
     }
