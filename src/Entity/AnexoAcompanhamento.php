@@ -116,7 +116,7 @@ class AnexoAcompanhamento
      * @param File $imageFile
      * @return AnexoAcompanhamento
      */
-    public function setImageFile($imageFile): AnexoAcompanhamento
+    public function setImageFile($imageFile): ?AnexoAcompanhamento
     {
         $this->imageFile = $imageFile;
 
@@ -136,7 +136,7 @@ class AnexoAcompanhamento
      *
      * @return AnexoAcompanhamento
      */
-    public function setDataCriacao($dataCriacao): AnexoAcompanhamento
+    public function setDataCriacao($dataCriacao): ?AnexoAcompanhamento
     {
         $this->dataCriacao = $dataCriacao;
 
@@ -148,7 +148,7 @@ class AnexoAcompanhamento
      *
      * @return \DateTime
      */
-    public function getDataCriacao(): \DateTime
+    public function getDataCriacao(): ?\DateTime
     {
         return $this->dataCriacao;
     }
@@ -160,7 +160,7 @@ class AnexoAcompanhamento
      *
      * @return AnexoAcompanhamento
      */
-    public function setDataAlteracao($dataAlteracao): AnexoAcompanhamento
+    public function setDataAlteracao($dataAlteracao): ?AnexoAcompanhamento
     {
         $this->dataAlteracao = $dataAlteracao;
 
@@ -172,7 +172,7 @@ class AnexoAcompanhamento
      *
      * @return \DateTime
      */
-    public function getDataAlteracao(): \DateTime
+    public function getDataAlteracao(): ?\DateTime
     {
         return $this->dataAlteracao;
     }
@@ -184,7 +184,7 @@ class AnexoAcompanhamento
      *
      * @return AnexoAcompanhamento
      */
-    public function setImageName($imageName): AnexoAcompanhamento
+    public function setImageName($imageName): ?AnexoAcompanhamento
     {
         $this->imageName = $imageName;
 
@@ -218,7 +218,7 @@ class AnexoAcompanhamento
      *
      * @return AnexoAcompanhamento
      */
-    public function setAcompanhamento(Acompanhamento $acompanhamento = null): AnexoAcompanhamento
+    public function setAcompanhamento(Acompanhamento $acompanhamento = null): ?AnexoAcompanhamento
     {
         $this->acompanhamento = $acompanhamento;
 
@@ -230,7 +230,7 @@ class AnexoAcompanhamento
      *
      * @return App\Entity\Acompanhamento
      */
-    public function getAcompanhamento(): App\Entity\Acompanhamento
+    public function getAcompanhamento(): ?App\Entity\Acompanhamento
     {
         return $this->acompanhamento;
     }

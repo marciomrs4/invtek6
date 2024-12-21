@@ -93,7 +93,7 @@ class CentroMovimentacao
     /**
      * Set unidade
      *
-     * @param \MRS\InventarioBundle\Entity\Unidade $unidade
+     * @param App\Entity\Unidade $unidade
      * @return CentroMovimentacao
      */
     public function setUnidade(Unidade $unidade = null): CentroMovimentacao
@@ -106,9 +106,9 @@ class CentroMovimentacao
     /**
      * Get unidade
      *
-     * @return \MRS\InventarioBundle\Entity\Unidade 
+     * @return App\Entity\Unidade 
      */
-    public function getUnidade(): \MRS\InventarioBundle\Entity\Unidade
+    public function getUnidade(): Unidade
     {
         return $this->unidade;
     }

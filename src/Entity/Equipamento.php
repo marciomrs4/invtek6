@@ -248,7 +248,7 @@ class Equipamento
     /**
      * @return CentroMovimentacao
      */
-    public function getCompradoPara(): CentroMovimentacao
+    public function getCompradoPara(): ?CentroMovimentacao
     {
         return $this->compradoPara;
     }
@@ -434,7 +434,7 @@ class Equipamento
      *
      * @return string
      */
-    public function getObservacao(): string
+    public function getObservacao(): ?string
     {
         return $this->observacao;
     }
@@ -467,7 +467,7 @@ class Equipamento
      *
      * @return App\Entity\CentroMovimentacao
      */
-    public function getCentroMovimentacao(): App\Entity\CentroMovimentacao
+    public function getCentroMovimentacao(): ?CentroMovimentacao
     {
         return $this->centroMovimentacao;
     }
@@ -490,7 +490,7 @@ class Equipamento
      *
      * @return App\Entity\Marca
      */
-    public function getMarca(): App\Entity\Marca
+    public function getMarca(): ?Marca
     {
         return $this->marca;
     }
@@ -513,7 +513,7 @@ class Equipamento
      *
      * @return App\Entity\Fornecedor
      */
-    public function getFornecedor(): App\Entity\Fornecedor
+    public function getFornecedor(): ?Fornecedor
     {
         return $this->fornecedor;
     }
@@ -536,7 +536,7 @@ class Equipamento
      *
      * @return App\Entity\Tipoequipamento
      */
-    public function getTipoequipamento(): App\Entity\Tipoequipamento
+    public function getTipoequipamento(): ?Tipoequipamento
     {
         return $this->tipoequipamento;
     }

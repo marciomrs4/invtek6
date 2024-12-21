@@ -124,7 +124,7 @@ class Anexo
      * @param string $dataalteracao
      * @return Anexo
      */
-    public function setDataalteracao($dataalteracao): Anexo
+    public function setDataalteracao($dataalteracao): ?Anexo
     {
         $this->dataalteracao = $dataalteracao;
         return $this;
@@ -133,7 +133,7 @@ class Anexo
     /**
      * @return File
      */
-    public function getImageFile(): File
+    public function getImageFile(): ?File
     {
         return $this->imageFile;
     }
@@ -142,7 +142,7 @@ class Anexo
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $imageFile
      * @return Anexo
      */
-    public function setImageFile(File $imageFile): Anexo
+    public function setImageFile(File $imageFile): ?Anexo
     {
         $this->imageFile = $imageFile;
 
@@ -165,7 +165,7 @@ class Anexo
      * @param string $imageName
      * @return Anexo
      */
-    public function setImageName($imageName): Anexo
+    public function setImageName($imageName): ?Anexo
     {
         $this->imageName = $imageName;
         return $this;
@@ -180,7 +180,7 @@ class Anexo
      * @param string $nome
      * @return Anexo
      */
-    public function setNome($nome): Anexo
+    public function setNome($nome): ?Anexo
     {
         $this->nome = $nome;
 
@@ -203,7 +203,7 @@ class Anexo
      * @param string $datacriacao
      * @return Anexo
      */
-    public function setDatacriacao($datacriacao): Anexo
+    public function setDatacriacao($datacriacao): ?Anexo
     {
         $this->datacriacao = $datacriacao;
 
@@ -236,7 +236,7 @@ class Anexo
      * @param App\Entity\Equipamento $equipamento
      * @return Anexo
      */
-    public function setEquipamento(Equipamento $equipamento = null): Anexo
+    public function setEquipamento(Equipamento $equipamento = null): ?Anexo
     {
         $this->equipamento = $equipamento;
 
@@ -248,7 +248,7 @@ class Anexo
      *
      * @return App\Entity\Equipamento 
      */
-    public function getEquipamento(): App\Entity\Equipamento
+    public function getEquipamento(): ?App\Entity\Equipamento
     {
         return $this->equipamento;
     }
