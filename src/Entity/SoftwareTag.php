@@ -137,7 +137,7 @@ class SoftwareTag
      *
      * @return App\Entity\Software 
      */
-    public function getSoftware(): App\Entity\Software
+    public function getSoftware()
     {
         return $this->software;
     }

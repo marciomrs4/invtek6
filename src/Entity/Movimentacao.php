@@ -170,7 +170,7 @@ class Movimentacao
      *
      * @return \DateTime 
      */
-    public function getDatahora(): \DateTime
+    public function getDatahora()
     {
         return $this->datahora;
     }
@@ -203,7 +203,7 @@ class Movimentacao
      *
      * @return App\Entity\Usuario 
      */
-    public function getUsuarioDestino(): App\Entity\Usuario
+    public function getUsuarioDestino()
     {
         return $this->usuarioDestino;
     }
@@ -226,7 +226,7 @@ class Movimentacao
      *
      * @return App\Entity\Usuario 
      */
-    public function getUsuarioOrigem(): App\Entity\Usuario
+    public function getUsuarioOrigem()
     {
         return $this->usuarioOrigem;
     }
@@ -249,7 +249,7 @@ class Movimentacao
      *
      * @return App\Entity\Usuario 
      */
-    public function getUsuarioCriador(): App\Entity\Usuario
+    public function getUsuarioCriador()
     {
         return $this->usuarioCriador;
     }
@@ -272,7 +272,7 @@ class Movimentacao
      *
      * @return App\Entity\Motivomovimentacao 
      */
-    public function getMotivomovimentacao(): App\Entity\Motivomovimentacao
+    public function getMotivomovimentacao()
     {
         return $this->motivomovimentacao;
     }
@@ -295,7 +295,7 @@ class Movimentacao
      *
      * @return App\Entity\Tipomovimentacao 
      */
-    public function getTipomovimentacao(): App\Entity\Tipomovimentacao
+    public function getTipomovimentacao()
     {
         return $this->tipomovimentacao;
     }

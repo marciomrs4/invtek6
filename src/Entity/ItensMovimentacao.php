@@ -117,7 +117,7 @@ class ItensMovimentacao
      *
      * @return App\Entity\Movimentacao 
      */
-    public function getMovimentacao(): App\Entity\Movimentacao
+    public function getMovimentacao()
     {
         return $this->movimentacao;
     }
@@ -140,7 +140,7 @@ class ItensMovimentacao
      *
      * @return App\Entity\Equipamento 
      */
-    public function getEquipamento(): App\Entity\Equipamento
+    public function getEquipamento()
     {
         return $this->equipamento;
     }

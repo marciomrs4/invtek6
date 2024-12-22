@@ -175,7 +175,7 @@ class CustoEquipamento
      *
      * @return App\Entity\Equipamento
      */
-    public function getEquipamento(): App\Entity\Equipamento
+    public function getEquipamento()
     {
         return $this->equipamento;
     }
@@ -199,7 +199,7 @@ class CustoEquipamento
      *
      * @return App\Entity\Usuario
      */
-    public function getUsuario(): App\Entity\Usuario
+    public function getUsuario()
     {
         return $this->usuario;
     }
@@ -223,7 +223,7 @@ class CustoEquipamento
      *
      * @return \DateTime
      */
-    public function getDataCriacao(): \DateTime
+    public function getDataCriacao()
     {
         return $this->data_criacao;
     }
@@ -247,7 +247,7 @@ class CustoEquipamento
      *
      * @return App\Entity\Acompanhamento
      */
-    public function getAcompanhamento(): App\Entity\Acompanhamento
+    public function getAcompanhamento()
     {
         return $this->acompanhamento;
     }

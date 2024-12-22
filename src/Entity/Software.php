@@ -118,7 +118,7 @@ class Software
      *
      * @return string 
      */
-    public function getDescricao(): string
+    public function getDescricao()
     {
         return $this->descricao;
     }
@@ -141,7 +141,7 @@ class Software
      *
      * @return string
      */
-    public function getNumerolicensa(): string
+    public function getNumerolicensa()
     {
         return $this->numerolicensa;
     }
@@ -164,7 +164,7 @@ class Software
      *
      * @return string
      */
-    public function getNumeroReserva(): string
+    public function getNumeroReserva()
     {
         return $this->numeroreserva;
     }
@@ -187,7 +187,7 @@ class Software
      *
      * @return string 
      */
-    public function getVersao(): string
+    public function getVersao()
     {
         return $this->versao;
     }
@@ -210,7 +210,7 @@ class Software
      *
      * @return string 
      */
-    public function getSerial(): string
+    public function getSerial()
     {
         return $this->serial;
     }
@@ -243,7 +243,7 @@ class Software
      *
      * @return App\Entity\Tiposoftware 
      */
-    public function getTiposoftware(): App\Entity\Tiposoftware
+    public function getTiposoftware()
     {
         return $this->tiposoftware;
     }
@@ -272,7 +272,7 @@ class Software
      *
      * @return App\Entity\FornecedorSoftware
      */
-    public function getFornecedor(): App\Entity\FornecedorSoftware
+    public function getFornecedor()
     {
         return $this->fornecedor;
     }

@@ -118,7 +118,7 @@ class Acompanhamento
      *
      * @return \DateTime 
      */
-    public function getDatahora(): ?\DateTime
+    public function getDatahora()
     {
         return $this->datahora;
     }
@@ -151,7 +151,7 @@ class Acompanhamento
      *
      * @return App\Entity\Tipoacompanhamento 
      */
-    public function getTipoacompanhamento(): ?App\Entity\Tipoacompanhamento
+    public function getTipoacompanhamento()
     {
         return $this->tipoacompanhamento;
     }
@@ -174,7 +174,7 @@ class Acompanhamento
      *
      * @return App\Entity\Equipamento 
      */
-    public function getEquipamento(): ?App\Entity\Equipamento
+    public function getEquipamento()
     {
         return $this->equipamento;
     }

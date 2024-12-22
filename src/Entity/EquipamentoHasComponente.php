@@ -87,7 +87,7 @@ class EquipamentoHasComponente
      *
      * @return App\Entity\Componente 
      */
-    public function getComponente(): App\Entity\Componente
+    public function getComponente()
     {
         return $this->componente;
     }
@@ -110,7 +110,7 @@ class EquipamentoHasComponente
      *
      * @return App\Entity\Equipamento 
      */
-    public function getEquipamento(): App\Entity\Equipamento
+    public function getEquipamento()
     {
         return $this->equipamento;
     }

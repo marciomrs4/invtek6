@@ -101,7 +101,7 @@ class Componente
      *
      * @return App\Entity\Tipocomponente 
      */
-    public function getTipocomponente(): App\Entity\Tipocomponente
+    public function getTipocomponente()
     {
         return $this->tipocomponente;
     }

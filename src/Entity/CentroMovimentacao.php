@@ -108,7 +108,7 @@ class CentroMovimentacao
      *
      * @return App\Entity\Unidade 
      */
-    public function getUnidade(): Unidade
+    public function getUnidade()
     {
         return $this->unidade;
     }

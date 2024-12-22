@@ -101,7 +101,7 @@ class Motivomovimentacao
      *
      * @return App\Entity\Tipomovimentacao 
      */
-    public function getTipomovimentacao(): App\Entity\Tipomovimentacao
+    public function getTipomovimentacao()
     {
         return $this->tipomovimentacao;
     }

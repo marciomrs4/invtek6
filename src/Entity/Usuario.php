@@ -129,7 +129,7 @@ class Usuario
     /**
      * @return string
      */
-    public function getObservacao(): string
+    public function getObservacao(): ?string
     {
         return $this->observacao;
     }
@@ -166,7 +166,7 @@ class Usuario
     /**
      * @return \MRS\UserBundle\Entity\User
      */
-    public function getUserId(): \MRS\UserBundle\Entity\User
+    public function getUserId()
     {
         return $this->user_id;
     }
@@ -258,7 +258,7 @@ class Usuario
      *
      * @return \MRS\InventarioBundle\Entity\CentroMovimentacao 
      */
-    public function getDepartamento(): \MRS\InventarioBundle\Entity\CentroMovimentacao
+    public function getDepartamento()
     {
         return $this->departamento;
     }

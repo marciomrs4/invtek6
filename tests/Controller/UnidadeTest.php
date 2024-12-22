@@ -69,6 +69,7 @@ class UnidadeTest extends WebTestCase
         foreach ($repository->findAll() as $object) {
             $this->manager->remove($object);
         }
+        $this->manager->flush();
 
     }
     

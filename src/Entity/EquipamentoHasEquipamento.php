@@ -85,7 +85,7 @@ class EquipamentoHasEquipamento
      *
      * @return App\Entity\Equipamento 
      */
-    public function getEquipamentoFilho(): App\Entity\Equipamento
+    public function getEquipamentoFilho()
     {
         return $this->equipamentoFilho;
     }
@@ -108,7 +108,7 @@ class EquipamentoHasEquipamento
      *
      * @return \MRS\InventarioBundle\Entity\Equipamento 
      */
-    public function getEquipamentoPai(): \MRS\InventarioBundle\Entity\Equipamento
+    public function getEquipamentoPai()
     {
         return $this->equipamentoPai;
     }

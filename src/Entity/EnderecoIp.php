@@ -217,7 +217,7 @@ class EnderecoIp
      *
      * @return App\Entity\TipoAcessoIp
      */
-    public function getTipoAcessoIp(): ?TipoAcessoIp
+    public function getTipoAcessoIp()
     {
         return $this->tipoAcessoIp;
     }
@@ -241,7 +241,7 @@ class EnderecoIp
      *
      * @return App\Entity\StatusIp
      */
-    public function getStatus(): ?App\Entity\StatusIp
+    public function getStatus()
     {
         return $this->status;
     }
@@ -265,7 +265,7 @@ class EnderecoIp
      *
      * @return App\Entity\Unidade
      */
-    public function getUnidade(): ?App\Entity\Unidade
+    public function getUnidade()
     {
         return $this->unidade;
     }

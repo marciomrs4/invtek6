@@ -137,7 +137,7 @@ class EquipamentoTag
      *
      * @return App\Entity\Equipamento 
      */
-    public function getEquipamento(): App\Entity\Equipamento
+    public function getEquipamento()
     {
         return $this->equipamento;
     }

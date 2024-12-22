@@ -85,7 +85,7 @@ class EquipamentoHasSoftware
      *
      * @return App\Entity\Software 
      */
-    public function getSoftware(): App\Entity\Software
+    public function getSoftware()
     {
         return $this->software;
     }
@@ -108,7 +108,7 @@ class EquipamentoHasSoftware
      *
      * @return App\Entity\Equipamento 
      */
-    public function getEquipamento(): App\Entity\Equipamento
+    public function getEquipamento()
     {
         return $this->equipamento;
     }

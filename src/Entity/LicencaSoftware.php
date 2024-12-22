@@ -94,9 +94,6 @@ class LicencaSoftware
     private $software;
 
 
-
-
-
     /**
      * Set notaFiscal
      *
@@ -140,7 +137,7 @@ class LicencaSoftware
      *
      * @return \DateTime
      */
-    public function getDataEmissao(): \DateTime
+    public function getDataEmissao()
     {
         return $this->data_emissao;
     }
@@ -246,7 +243,7 @@ class LicencaSoftware
      *
      * @return App\Entity\Software
      */
-    public function getSoftware(): App\Entity\Software
+    public function getSoftware()
     {
         return $this->software;
     }

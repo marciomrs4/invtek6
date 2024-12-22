@@ -107,7 +107,7 @@ class AnexoAcompanhamento
     /**
      * @return File
      */
-    public function getImageFile(): File
+    public function getImageFile()
     {
         return $this->imageFile;
     }
@@ -148,7 +148,7 @@ class AnexoAcompanhamento
      *
      * @return \DateTime
      */
-    public function getDataCriacao(): ?\DateTime
+    public function getDataCriacao()
     {
         return $this->dataCriacao;
     }
@@ -172,7 +172,7 @@ class AnexoAcompanhamento
      *
      * @return \DateTime
      */
-    public function getDataAlteracao(): ?\DateTime
+    public function getDataAlteracao()
     {
         return $this->dataAlteracao;
     }
@@ -230,7 +230,7 @@ class AnexoAcompanhamento
      *
      * @return App\Entity\Acompanhamento
      */
-    public function getAcompanhamento(): ?App\Entity\Acompanhamento
+    public function getAcompanhamento()
     {
         return $this->acompanhamento;
     }
